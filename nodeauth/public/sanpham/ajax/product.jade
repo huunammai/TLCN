@@ -1,0 +1,81 @@
+doctype html
+extends layout
+
+block content
+
+  head
+button.close(aria-hidden='true', data-dismiss='modal', type='button')  ×
+.col-lg-5.col-md-5.col-sm-5.col-xs-12
+  .main-image.col-lg-12.no-padding.style3
+    a.product-largeimg-link(href='product-details.html')
+      img.img-responsive.product-largeimg(src='images/product_details/low-res-white/1.html', alt='img')
+  .modal-product-thumb
+    a.thumbLink.selected
+      img.img-responsive(data-large='images/product_details/low-res-white/1.jpg', alt='img', src='images/product_details/low-res-white/1.html')
+    a.thumbLink
+      img.img-responsive(data-large='images/product_details/low-res-white/2.jpg', alt='img', src='images/product_details/low-res-white/2.html')
+    a.thumbLink
+      img.img-responsive(data-large='images/product_details/low-res-white/3.jpg', alt='img', src='images/product_details/low-res-white/3.html')
+.col-lg-7.col-md-7.col-sm-7.col-xs-12.modal-details.no-padding
+  .modal-details-inner
+    h1.product-title
+      | Laptop Acer Aspire Z1402 39KT i3 5005U/4GB/500GB/Win10/KhôngDVD
+      h3.product-code KHUYẾN MÃI ÁP DỤNG ĐẾN 31/12
+      .product-price
+        span.price-sales  8.490.000₫
+        span.price-standard
+      .details-description
+        p
+          | Acer Aspire Z1402 39KT với con chip core i3 cùng ổ cứng 500 GB đảm bảo cho bạn hiệu năng mượt mà.
+      .color-details
+        span.selected-color
+          strong COLOR
+        ul.swatches.Color
+          li.selected
+            a(style='background-color:#f1f40e')  
+          li
+            a(style='background-color:#adadad')  
+          li
+            a(style='background-color:#4EC67F')  
+      .productFilter.productFilterLook2
+        .row
+          .col-lg-6.col-sm-6.col-xs-6
+            .filterBox
+              select.form-control
+                option(value='strawberries', selected='') Quantity
+                option(value='mango') 1
+                option(value='bananas') 2
+                option(value='watermelon') 3
+                option(value='grapes') 4
+                option(value='oranges') 5
+                option(value='pineapple') 6
+                option(value='peaches') 7
+                option(value='cherries') 8
+          .col-lg-6.col-sm-6.col-xs-6
+            .filterBox
+              select.form-control
+                option(value='strawberries', selected='') Size
+                option(value='mango') XL
+                option(value='bananas') XXL
+                option(value='watermelon') M
+                option(value='apples') L
+                option(value='apples') S
+      .cart-actions
+        .addto.row
+          .col-lg-6
+            button.button.btn-block.btn-cart.cart.first(onclick='productAddToCartForm.submit(this);', title='Add to Cart', type='button')
+              | Add to Cart
+          .col-lg-6
+            a.link-wishlist.wishlist.btn-block Add to Wishlist
+      .product-share.clearfix
+        p  SHARE 
+        .socialIcon
+          a(href='#')
+            i.fa.fa-facebook
+          a(href='#')
+            i.fa.fa-twitter
+          a(href='#')
+            i.fa.fa-google-plus
+          a(href='#')
+            i.fa.fa-pinterest
+.clear

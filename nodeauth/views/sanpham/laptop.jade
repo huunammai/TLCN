@@ -1,0 +1,1166 @@
+block header
+block content
+doctype html
+html(lang='en')
+  // Mirrored from templatecycle.com/tshop/v-1.5/gray/category-product-slide.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Oct 2016 06:11:05 GMT
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='apple-touch-icon-precomposed', sizes='144x144', href='assets/ico/apple-touch-icon-144-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='assets/ico/apple-touch-icon-114-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='assets/ico/apple-touch-icon-72-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='ico/apple-touch-icon-57-precomposed.html')
+    link(rel='shortcut icon', href='assets/ico/favicon.png')
+    title shopNAMMAI - Bootstrap E-Commerce Parallax Theme
+    link(href='assets/bootstrap/css/bootstrap.css', rel='stylesheet')
+    link#pagestyle(rel='stylesheet', type='text/css', href='assets/css/skin-1.css')
+    link(href='assets/css/style.css', rel='stylesheet')
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+    script.
+      paceOptions = {
+      elements: true
+      };
+    script(src='assets/js/pace.min.js')
+    script(type='text/javascript').
+      function swapStyleSheet(sheet){
+      document.getElementById('pagestyle').setAttribute('href', sheet);
+      }
+    style.
+      .themeControll{background:#2d3e50;height:auto;width:100px;position:fixed;left:0;padding:20px;top:20%;z-index:999999;-webkit-transform:translateX(0);-moz-transform:translateX(0);-o-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0);opacity:1;-ms-filter:none;filter:none;-webkit-transition:opacity .5s linear,-webkit-transform .7s cubic-bezier(.56,.48,0,.99);-moz-transition:opacity .5s linear,-moz-transform .7s cubic-bezier(.56,.48,0,.99);-o-transition:opacity .5s linear,-o-transform .7s cubic-bezier(.56,.48,0,.99);-ms-transition:opacity .5s linear,-ms-transform .7s cubic-bezier(.56,.48,0,.99);transition:opacity .5s linear,transform .7s cubic-bezier(.56,.48,0,.99);}.themeControll.active{display:block;-webkit-transform:translateX(-100px);-moz-transform:translateX(-100px);-o-transform:translateX(-100px);-ms-transform:translateX(-1020px);transform:translateX(-100px);-webkit-transition:opacity .5s linear,-webkit-transform .7s cubic-bezier(.56,.48,0,.99);-moz-transition:opacity .5s linear,-moz-transform .7s cubic-bezier(.56,.48,0,.99);-o-transition:opacity .5s linear,-o-transform .7s cubic-bezier(.56,.48,0,.99);-ms-transition:opacity .5s linear,-ms-transform .7s cubic-bezier(.56,.48,0,.99);transition:opacity .5s linear,transform .7s cubic-bezier(.56,.48,0,.99);}.themeControll a{border-radius:3px;clear:both;display:block;height:25px;margin-bottom:4px;width:50px;}.tbtn{background:#2D3E50;color:#FFFFFF!important;font-size:30px;height:auto;padding:10px;position:absolute;right:-40px;top:0;width:40px;cursor:pointer;}@media (max-width: 780px) {.themeControll{display:none;}}
+ 
+    #ModalLogin.modal.signUpContent.fade(tabindex='-1', role='dialog')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true')  × 
+            h3.modal-title-site.text-center  ĐĂNG NHẬP shopNAMMAI
+          .modal-body
+            .form-group.login-username
+              div
+                input.login-user.form-control.input(name='log', size='20', placeholder='Enter Username', type='text')
+            .form-group.login-password
+              div
+                input.login-password.form-control.input(name='Password', size='20', placeholder='Password', type='password')
+            .form-group
+              div
+                .checkbox.login-remember
+                  label
+                    input(name='rememberme', value='forever', checked='checked', type='checkbox')
+                    | NHỚ MẬT KHẨU
+            div
+              div
+                input.btn.btn-block.btn-lg.btn-primary(name='submit', value='ĐĂNG NHẬP', type='submit')
+          .modal-footer
+            p.text-center
+              | Not here before? 
+              a(data-toggle='modal', data-dismiss='modal', href='#ModalSignup')  Sign Up. 
+              br
+              a(href='forgot-password.html')  Quên mật khẩu? 
+    #ModalSignup.modal.signUpContent.fade(tabindex='-1', role='dialog')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true')  × 
+            h3.modal-title-site.text-center  ĐĂNG KÝ
+          .modal-body
+            .control-group
+              a.fb_button.btn.btn-block.btn-lg(href='#')
+                | ĐĂNG KÝ VỚI
+                | FACEBOOK
+            h5.text-center(style='padding:10px 0 10px 0;')  hoặc 
+            .form-group.reg-username
+              div
+                input.form-control.input(name='login', size='20', placeholder='Enter Username', type='text')
+            .form-group.reg-email
+              div
+                input.form-control.input(name='reg', size='20', placeholder='Enter Email', type='text')
+            .form-group.reg-password
+              div
+                input.form-control.input(name='password', size='20', placeholder='Password', type='password')
+            .form-group
+              div
+                .checkbox.login-remember
+                  label
+                    input#rememberme(name='rememberme', value='forever', checked='checked', type='checkbox')
+                    | NHỚ MẬT KHẨU
+            div
+              div
+                input.btn.btn-block.btn-lg.btn-primary(name='submit', value='ĐĂNG KÝ', type='submit')
+          .modal-footer
+            p.text-center
+              | Bạn đã có tài khoản?  
+              a(data-toggle='modal', data-dismiss='modal', href='#ModalLogin')
+                | đăng nhập
+    .navbar.navbar-tshop.navbar-fixed-top.megamenu(role='navigation')
+      .navbar-top
+        .container
+          .row
+            .col-lg-6.col-sm-6.col-xs-6.col-md-6
+              .pull-left
+                ul.userMenu
+                  li
+                    a(href='#')
+                      span.hidden-xs HELP
+                      i.glyphicon.glyphicon-info-sign.hide.visible-xs
+                  li.phone-number
+                    a(href='callto:0967-399-470')
+                      span
+                        i.glyphicon.glyphicon-phone-alt
+                      span.hidden-xs(style='margin-left:5px') 0967-399-470
+            .col-lg-6.col-sm-6.col-xs-6.col-md-6.no-margin.no-padding
+              .pull-right
+                ul.userMenu
+                  li
+                    a(href='account-1.html')
+                      span.hidden-xs  Tài khoản của tôi
+                      i.glyphicon.glyphicon-user.hide.visible-xs
+                  li
+                    a(href='#', data-toggle='modal', data-target='#ModalLogin')
+                      span.hidden-xs Đăng nhập
+                      i.glyphicon.glyphicon-log-in.hide.visible-xs
+                  li.hidden-xs
+                    a(href='#', data-toggle='modal', data-target='#ModalSignup')
+                      | Tạo
+                      | tài khoản
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only  Toggle navigation 
+            span.icon-bar  
+            span.icon-bar  
+            span.icon-bar  
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-cart')
+            i.fa.fa-shopping-cart.colorWhite  
+            span.cartRespons.colorWhite  Cart ($210.00) 
+          a.navbar-brand(href='index.html')
+            img(src='images/shopping-bag-flat.png', alt='SHOP',style='height: 110%')
+          .search-box.pull-right.hidden-lg.hidden-md.hidden-sm
+            .input-group
+              button.btn.btn-nobg.getFullSearch(type='button')
+                i.fa.fa-search  
+        .navbar-cart.collapse
+          .cartMenu.col-lg-4.col-xs-12.col-md-4
+            .w100.miniCartTable.scroll-pane
+              table
+                tbody
+                  tr.miniCartProduct
+                    td.miniCartProductThumb(style='width:20%')
+                      div
+                        a(href='product-details.html')
+                          img(src='images/product/3.jpg', alt='img')
+                    td(style='width:40%')
+                      .miniCartDescription
+                        h4
+                          a(href='product-details.html') shopNAMMAI shirt Black 
+                        span.size  12 x 1.5 L 
+                        .price
+                          span  $8.80 
+                    td.miniCartQuantity(style='width:10%')
+                      a  X 1 
+                    td.miniCartSubtotal(style='width:15%')
+                      span  $8.80 
+                    td.delete(style='width:5%')
+                      a  x 
+                  tr.miniCartProduct
+                    td.miniCartProductThumb(style='width:20%')
+                      div
+                        a(href='product-details.html')
+                          img(src='images/product/2.jpg', alt='img')
+                    td(style='width:40%')
+                      .miniCartDescription
+                        h4
+                          a(href='product-details.html')  TSHOP T shirt Black 
+                        span.size  12 x 1.5 L 
+                        .price
+                          span  $8.80 
+                    td.miniCartQuantity(style='width:10%')
+                      a  X 1 
+                    td.miniCartSubtotal(style='width:15%')
+                      span  $8.80 
+                    td.delete(style='width:5%')
+                      a  x 
+                  tr.miniCartProduct
+                    td.miniCartProductThumb(style='width:20%')
+                      div
+                        a(href='product-details.html')
+                          img(src='images/product/5.jpg', alt='img')
+                    td(style='width:40%')
+                      .miniCartDescription
+                        h4
+                          a(href='product-details.html')  shopNAMMAI shirt Black 
+                        span.size  12 x 1.5 L 
+                        .price
+                          span  $8.80 
+                    td.miniCartQuantity(style='width:10%')
+                      a  X 1 
+                    td.miniCartSubtotal(style='width:15%')
+                      span  $8.80 
+                    td.delete(style='width:5%')
+                      a  x 
+                  tr.miniCartProduct
+                    td.miniCartProductThumb(style='width:20%')
+                      div
+                        a(href='product-details.html')
+                          img(src='images/product/3.jpg', alt='img')
+                    td(style='width:40%')
+                      .miniCartDescription
+                        h4
+                          a(href='product-details.html')  shopNAMMAI shirt Black 
+                        span.size  12 x 1.5 L 
+                        .price
+                          span  $8.80 
+                    td.miniCartQuantity(style='width:10%')
+                      a  X 1 
+                    td.miniCartSubtotal(style='width:15%')
+                      span  $8.80 
+                    td.delete(style='width:5%')
+                      a  x 
+                  tr.miniCartProduct
+                    td.miniCartProductThumb(style='width:20%')
+                      div
+                        a(href='product-details.html')
+                          img(src='images/product/3.jpg', alt='img')
+                    td(style='width:40%')
+                      .miniCartDescription
+                        h4
+                          a(href='product-details.html')  shopNAMMAI shirt Black 
+                        span.size  12 x 1.5 L 
+                        .price
+                          span  $8.80 
+                    td.miniCartQuantity(style='width:10%')
+                      a  X 1 
+                    td.miniCartSubtotal(style='width:15%')
+                      span  $8.80 
+                    td.delete(style='width:5%')
+                      a  x 
+                  tr.miniCartProduct
+                    td.miniCartProductThumb(style='width:20%')
+                      div
+                        a(href='product-details.html')
+                          img(src='images/product/4.jpg', alt='img')
+                    td(style='width:40%')
+                      .miniCartDescription
+                        h4
+                          a(href='product-details.html')  shopNAMMAI shirt Black 
+                        span.size  12 x 1.5 L 
+                        .price
+                          span  $8.80 
+                    td.miniCartQuantity(style='width:10%')
+                      a  X 1 
+                    td.miniCartSubtotal(style='width:15%')
+                      span  $8.80 
+                    td.delete(style='width:5%')
+                      a  x 
+            .miniCartFooter.miniCartFooterInMobile.text-right
+              h3.text-right.subtotal  Subtotal: $210 
+              a.btn.btn-sm.btn-danger(href='index')
+                i.fa.fa-shopping-cart  
+                |  VIEW CART
+              a.btn.btn-sm.btn-primary(href='checkout-0.html')  CHECKOUT 
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='#')
+                i.glyphicon.glyphicon-home
+                |  Trang chủ
+            li.dropdown.megamenu-fullwidth
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                i.glyphicon.glyphicon-folder-close
+                |  Loại sản phẩm 
+                b.caret  
+              ul.dropdown-menu
+                li.megamenu-content
+                  ul.col-lg-3.col-sm-3.col-md-3.unstyled.noMarginLeft.newCollectionUl
+                    li.no-border
+                      p.promo-1
+                        strong  SẢN PHẨM MỚI 
+                    li
+                      a(href='category.html')  TẤT CẢ SẢN PHẨM 
+                    li
+                      a(href='category.html')  LAP TOP 
+                    li
+                      a(href='category.html')  ĐIỆN THOẠI
+                    li
+                      a(href='category.html')  MÁY TÍNH BẢNG 
+                    li
+                      a(href='category.html')  PHỤ KIỆN 
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-4
+                    li
+                      a.newProductMenuBlock(href='product-details.html')
+                        img.img-responsive(src='images/site/promo1.jpg', alt='product')
+                        span.ProductMenuCaption
+                          i.fa.fa-caret-right  
+                          |  LAP TOP
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-4
+                    li
+                      a.newProductMenuBlock(href='product-details.html')
+                        img.img-responsive(src='images/site/promo2.jpg', alt='product')
+                        span.ProductMenuCaption
+                          i.fa.fa-caret-right  
+                          |  ĐIỆN THOẠI
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-4
+                    li
+                      a.newProductMenuBlock(href='product-details.html')
+                        img.img-responsive(src='images/site/promo3.jpg', alt='product')
+                        span.ProductMenuCaption
+                          i.fa.fa-caret-right  
+                          |  MÁY TÍNH BẢNG
+            li.dropdown.megamenu-80width
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                i.glyphicon.glyphicon-shopping-cart
+                |  SHOP
+                b.caret  
+              ul.dropdown-menu
+                li.megamenu-content
+                 ul.col-lg-2.col-sm-2.col-md-2.unstyled
+                    li
+                      p
+                        strong  LAPTOP 
+                    li
+                      a(href='#')  Apple
+                    li
+                      a(href='#')  Lenovo
+                    li
+                      a(href='#')  ASUS
+                    li
+                      a(href='#')  SONY 
+                    li
+                      a(href='#')  Toshiba 
+                    li
+                      a(href='#')  HP 
+                    li
+                      a(href='#')  Dell 
+                    li
+                      a(href='#')  Acer
+                  ul.col-lg-2.col-sm-2.col-md-2.unstyled.noMarginLeft
+                    li
+                      p
+                        strong  ĐIỆN THOẠI 
+                    li
+                      a(href='#')  HTC 
+                    li
+                      a(href='#')  SAMSUM 
+                    li
+                      a(href='#')  SONY 
+                    li
+                      a(href='#')  APPLE 
+                    li
+                      a(href='#')  NOKIA 
+                    li
+                      a(href='#')  OPPO 
+                    li
+                      a(href='#')  LG 
+                    li
+                      a(href='#')  LENOVO
+                 
+                  ul.col-lg-2.col-sm-2.col-md-2.unstyled
+                    li
+                      p
+                        strong  MÁY TÍNH BẢNG 
+                    li
+                      a(href='#')  SAMSUM 
+                    li
+                      a(href='#')  ASUS 
+                    li
+                      a(href='#')  LENOVO 
+                    li
+                      a(href='#')  OPPO 
+                    
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-6
+                    li.no-margin.productPopItem
+                      a(href='product-details.html')
+                        img.img-responsive(src='images/site/g4.jpg', alt='img')
+                      a.text-center.productInfo.alpha90(href='product-details.html')
+                        
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-6
+                    li.no-margin.productPopItem.relative
+                      a(href='product-details.html')
+                        img.img-responsive(src='images/site/g5.jpg', alt='img')
+                      a.text-center.productInfo.alpha90(href='product-details.html')
+                        | Eodem modo
+                        | typi 
+                        br
+                        span  $60 
+             li
+              a(href='lienhe')
+                i.glyphicon.glyphicon-earphone
+                |  Liên Hệ 
+            li
+              a(href='about-us.html')
+                i.glyphicon.glyphicon-question-sign
+                |  Thông Tin Shop
+          .nav.navbar-nav.navbar-right.hidden-xs
+            .dropdown.cartMenu
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                i.fa.fa-shopping-cart  
+                span.cartRespons  Cart ($210.00) 
+                b.caret  
+              .dropdown-menu.col-lg-4.col-xs-12.col-md-4
+                .w100.miniCartTable.scroll-pane
+                  table
+                    tbody
+                      tr.miniCartProduct
+                        td.miniCartProductThumb(style='width:20%')
+                          div
+                            a(href='product-details.html')
+                              img(src='images/product/3.jpg', alt='img')
+                        td(style='width:40%')
+                          .miniCartDescription
+                            h4
+                              a(href='product-details.html')   Dell XPS 13
+                            span.size  laptop
+                            .price
+                              span  23.000.000đ
+                        td.miniCartQuantity(style='width:10%')
+                          a  X 1 
+                        td.miniCartSubtotal(style='width:15%')
+                          span  23.000.000đ
+                        td.delete(style='width:5%')
+                          a  x 
+                      tr.miniCartProduct
+                        td.miniCartProductThumb(style='width:20%')
+                          div
+                            a(href='product-details.html')
+                              img(src='images/product/2.jpg', alt='img')
+                        td(style='width:40%')
+                          .miniCartDescription
+                            h4
+                              a(href='product-details.html')  TShir TSHOP 09 
+                            span.size  12 x 1.5 L 
+                            .price
+                              span  $15 
+                        td.miniCartQuantity(style='width:10%')
+                          a  X 1 
+                        td.miniCartSubtotal(style='width:15%')
+                          span  $120 
+                        td.delete(style='width:5%')
+                          a  x 
+                      tr.miniCartProduct
+                        td.miniCartProductThumb(style='width:20%')
+                          div
+                            a(href='product-details.html')
+                              img(src='images/product/5.jpg', alt='img')
+                        td(style='width:40%')
+                          .miniCartDescription
+                            h4
+                              a(href='product-details.html')  Tshir 2014 
+                            span.size  12 x 1.5 L 
+                            .price
+                              span  $30 
+                        td.miniCartQuantity(style='width:10%')
+                          a  X 1 
+                        td.miniCartSubtotal(style='width:15%')
+                          span  $80 
+                        td.delete(style='width:5%')
+                          a  x 
+                      tr.miniCartProduct
+                        td.miniCartProductThumb(style='width:20%')
+                          div
+                            a(href='product-details.html')
+                              img(src='images/product/3.jpg', alt='img')
+                        td(style='width:40%')
+                          .miniCartDescription
+                            h4
+                              a(href='product-details.html')  TSHOP T shirt DO20 
+                            span.size  12 x 1.5 L 
+                            .price
+                              span  $15 
+                        td.miniCartQuantity(style='width:10%')
+                          a  X 1 
+                        td.miniCartSubtotal(style='width:15%')
+                          span  $55 
+                        td.delete(style='width:5%')
+                          a  x 
+                      tr.miniCartProduct
+                        td.miniCartProductThumb(style='width:20%')
+                          div
+                            a(href='product-details.html')
+                              img(src='images/product/4.jpg', alt='img')
+                        td(style='width:40%')
+                          .miniCartDescription
+                            h4
+                              a(href='product-details.html')  T shirt Black 
+                            span.size  12 x 1.5 L 
+                            .price
+                              span  $44 
+                        td.miniCartQuantity(style='width:10%')
+                          a  X 1 
+                        td.miniCartSubtotal(style='width:15%')
+                          span  $40 
+                        td.delete(style='width:5%')
+                          a  x 
+                      tr.miniCartProduct
+                        td.miniCartProductThumb(style='width:20%')
+                          div
+                            a(href='product-details.html')
+                              img(src='images/site/winter.jpg', alt='img')
+                        td(style='width:40%')
+                          .miniCartDescription
+                            h4
+                              a(href='product-details.html')  G Star T shirt 
+                            span.size  12 x 1.5 L 
+                            .price
+                              span  $80 
+                        td.miniCartQuantity(style='width:10%')
+                          a  X 1 
+                        td.miniCartSubtotal(style='width:15%')
+                          span  $8.80 
+                        td.delete(style='width:5%')
+                          a  x 
+                .miniCartFooter.text-right
+                  h3.text-right.subtotal  Subtotal: $210 
+                  a.btn.btn-sm.btn-danger(href='index')
+                    i.fa.fa-shopping-cart  
+                    |  VIEW
+                    | CART
+                  a.btn.btn-sm.btn-primary  CHECKOUT 
+            .search-box
+              .input-group
+                button.btn.btn-nobg.getFullSearch(type='button')
+                  i.fa.fa-search  
+      .search-full.text-right
+        a.pull-right.search-close
+          i.fa.fa-times-circle  
+        .searchInputBox.pull-right
+          input.search-input(type='search', data-searchurl='search?=', name='q', placeholder='start typing and hit enter to search')
+          button.btn-nobg.search-btn(type='submit')
+            i.fa.fa-search  
+     
+    .container.main-container.headerOffset
+      .row
+        .breadcrumbDiv.col-lg-12
+          ul.breadcrumb
+            li
+              a(href='index.html') Home
+            li.active shop
+      .row
+        .col-lg-3.col-md-3.col-sm-12
+          #accordionNo.panel-group
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title
+                  a.collapseWill.active(data-toggle='collapse', href='#collapseCategory')
+                    span.pull-left
+                      i.fa.fa-caret-right
+                    |  THỂ LOẠI
+              #collapseCategory.panel-collapse.collapse.in
+                .panel-body
+                  ul.nav.nav-pills.nav-stacked.tree
+                    li.active.dropdown-tree.open-tree
+                      a.dropdown-tree-a
+                        span.badge.pull-right 30
+                        |  SẢN PHẨM
+                    li
+                      a(href='#')
+                        span.badge.pull-right 24
+                        |  LAP TOP
+                    li
+                      a(href='#')
+                        span.badge.pull-right 15
+                        |  ĐIỆN THOẠI
+                    li
+                      a(href='#')
+                        span.badge.pull-right 12
+                        |  MÁY TÍNH BẢNG
+                    li
+                      a(href='#')
+                        span.badge.pull-right 31
+                        |  PHỤ KIỆN
+                    li
+                      a(href='#')
+                        span.badge.pull-right 42
+                        |  More Stores
+                    li
+                      a(href='#')
+                        span.badge.pull-right 42
+                        |  Offers Zone
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title
+                  a.collapseWill.active(data-toggle='collapse', href='#collapsePrice')
+                    | Giá Bán
+                    span.pull-left
+                      i.fa.fa-caret-right
+                  span.pull-right.clearFilter.label-danger  Clear 
+              #collapsePrice.panel-collapse.collapse.in
+                .panel-body.priceFilterBody
+                  label
+                    input(type='radio', name='agree', value='0')
+                    | Dưới 8 triệu
+                  br
+                  label
+                    input(type='radio', name='agree', value='1')
+                    | Từ 8 - 10 triệu
+                  br
+                  label
+                    input(type='radio', name='agree', value='2')
+                    | Từ 10 - 12 triệu
+                  br
+                  label
+                    input(type='radio', name='agree', value='3')
+                    | Từ 12 - 14 triệu
+                  br
+                  label
+                    input(type='radio', name='agree', value='4')
+                    | Giá khác
+                  br
+                  label
+                    input(type='radio', name='agree', value='6', disabled='', checked='')
+                    | Tất cả
+                  hr
+                  p Nhập khoảng giá
+                  form.form-inline(role='form')
+                    .form-group
+                      input#exampleInputEmail2.form-control(type='text', placeholder='5 triệu')
+                    .form-group.sp  -
+                    .form-group
+                      input#exampleInputPassword2.form-control(type='text', placeholder='8 triệu $')
+                    button.btn.btn-default.pull-right(type='submit') tìm
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title
+                  a.collapseWill.active(data-toggle='collapse', href='#collapseBrand')
+                    | Nhãn Hiệu 
+                    span.pull-left
+                      i.fa.fa-caret-right
+              #collapseBrand.panel-collapse.collapse.in
+                .panel-body.smoothscroll.maxheight400
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='0')
+                      | SAMSUM
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='1')
+                      | NOKIA
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='2')
+                      | APPLE
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | SONY
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | Dell
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | Acer
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | HTC
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | OPPO
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | LENOVO
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | LG
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | ASUS
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | Toshiba
+                  .block-element
+                    label
+                      input(type='checkbox', name='tour', value='3')
+                      | HP
+                  
+        .col-lg-9.col-md-9.col-sm-12
+          .w100.clearfix.category-top
+            h2  LAPTOP ACER ASPIRE Z1402 39KT I3 5005U/4GB/500GB/WIN10/KHÔNGDVD 
+              p.hidden-xs
+              
+
+            .categoryImage
+              img.img-responsive(src='images/site/ACER _ASPIRE_Z1402.jpg', alt='img')
+             
+          .row.subCategoryList.clearfix
+            .col-lg-2.col-md-2.col-sm-3.col-xs-4.text-center
+              .thumbnail.equalheight
+                a.subCategoryThumb(href='sub-category.html')
+                  img.img-rounded(src='images/product/acer-aspire-z140-1.jpg', alt='img')
+                a.subCategoryTitle
+                  span  TẠO ẤN TƯỢNG VỚI VỎ NGOÀI
+            .col-lg-2.col-md-2.col-sm-3.col-xs-4.text-center
+              .thumbnail.equalheight
+                a.subCategoryThumb(href='sub-category.html')
+                  img.img-rounded(src='images/site/acer-aspire-z140-2.jpg', alt='img')
+                a.subCategoryTitle
+                  span  PHÙ HỢP VỚI CÁC YÊU CẦU
+            .col-lg-2.col-md-2.col-sm-3.col-xs-4.text-center
+              .thumbnail.equalheight
+                a.subCategoryThumb(href='sub-category.html')
+                  img.img-rounded(src='images/site/acer-aspire-z140-3.jpg', alt='img')
+                a.subCategoryTitle
+                  span  CÔNG NGHỆ GIẢM ÁNH SÁNG XANH 
+            .col-lg-2.col-md-2.col-sm-3.col-xs-4.text-center
+              .thumbnail.equalheight
+                a.subCategoryThumb(href='sub-category.html')
+                  img.img-rounded(src='images/site/acer-aspire-z140-4.jpg', alt='img')
+                a.subCategoryTitle
+                  span  THIẾT KẾ CỤM PHÍM SỐ THÔNG MINH
+            .col-lg-2.col-md-2.col-sm-3.col-xs-4.text-center
+              .thumbnail.equalheight
+                a.subCategoryThumb(href='sub-category.html')
+                  img.img-rounded(src='images/site/acer-aspire-z140-5.jpg', alt='img')
+                a.subCategoryTitle
+                  span  TOUCHPAD ĐA CHẠM
+            .col-lg-2.col-md-2.col-sm-3.col-xs-4.text-center
+              .thumbnail.equalheight
+                a.subCategoryThumb(href='sub-category.html')
+                  img.img-rounded(src='images/site/acer-aspire-z140-6.jpg', alt='img')
+                a.subCategoryTitle
+                  span  Bộ sảm phẩm: sách hướng dẫn, thùng máy, sạc 
+          .w100.productFilter.clearfix
+            p.pull-left
+              | Đang 
+              strong 12 sản phẩm
+              |  hiển thị
+            .pull-right
+              .change-order.pull-right
+                select.form-control(name='orderby')
+                  option(selected='selected') Default sorting
+                  option(value='popularity') Sort by popularity
+                  option(value='rating') Sort by average rating
+                  option(value='date') Sort by newness
+                  option(value='price') Sort by price: low to high
+                  option(value='price-desc') Sort by price: high to low
+              .change-view.pull-right
+                a.grid-view(href='#', title='Grid')
+                  i.fa.fa-th-large
+                a.list-view(href='#', title='List')
+                  i.fa.fa-th-list
+          .row.categoryProduct.xsResponse.clearfix
+            .item.itemauto.col-sm-4.col-lg-4.col-md-4.col-xs-6
+              .product
+                a.add-fav.tooltipHere(data-toggle='tooltip', data-original-title='Add to Wishlist', data-placement='left')
+                  i.glyphicon.glyphicon-heart
+                .imageHover
+                  .promotion
+                    span.discount 15% OFF
+                  #carousel-id-1.carousel.slide(data-ride='carousel', data-interval='0')
+                    ol.carousel-indicators
+                      li.active(data-target='#carousel-id-1', data-slide-to='0')
+                      li(data-target='#carousel-id-1', data-slide-to='1')
+                      li(data-target='#carousel-id-1', data-slide-to='2')
+                    .carousel-inner(role='listbox')
+                      .item.active
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/5.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/21.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/30.jpg', alt='img')
+                    a.left.carousel-control(href='#carousel-id-1', role='button', data-slide='prev')
+                      span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                      span.sr-only Previous
+                    a.right.carousel-control(href='#carousel-id-1', role='button', data-slide='next')
+                      span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                      span.sr-only Next
+                .description
+                  h4
+                    a(href='product-details.html')  Laptop Asus TP301UA i5 6200U/4GB/500GB/Win10
+                  .grid-description
+                    p Tặng Balo Asus
+                  .list-description
+                    p
+                      | Sed sed rutrum purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      | Pellentesque risus lacus, iaculis in ante vitae, viverra hendrerit ante. Aliquam vel
+                      | fermentum elit. Morbi rhoncus, neque in vulputate facilisis, leo tortor sollicitudin
+                      | odio, quis pellentesque lorem nisi quis enim. In dolor mi, hendrerit at blandit
+                      | vulputate, congue a purus. Sed eget turpis sit amet orci euismod accumsan. Praesent
+                      | sit amet placerat elit.
+                  span.size Bảo hành chính hãng: thân máy 24 tháng, pin 12 tháng, sạc 12 tháng 
+                .price
+                  span 15.990.000₫
+                .action-control
+                  a.btn.btn-primary
+                    span.add2cart
+                      i.glyphicon.glyphicon-shopping-cart  
+                      |  Add to cart
+            .item.itemauto.col-sm-4.col-lg-4.col-md-4.col-xs-6
+              .product
+                a.add-fav.tooltipHere(data-toggle='tooltip', data-original-title='Add to Wishlist', data-placement='left')
+                  i.glyphicon.glyphicon-heart
+                .imageHover
+                  #carousel-id-2.carousel.slide.carousel-fade(data-ride='carousel')
+                    ol.carousel-indicators
+                      li.active(data-target='#carousel-id-2', data-slide-to='0')
+                      li(data-target='#carousel-id-2', data-slide-to='1')
+                      li(data-target='#carousel-id-2', data-slide-to='2')
+                    .carousel-inner(role='listbox')
+                      .item.active
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/22.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/5.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/18.jpg', alt='img')
+                    a.left.carousel-control(href='#carousel-id-2', role='button', data-slide='prev')
+                      span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                      span.sr-only Previous
+                    a.right.carousel-control(href='#carousel-id-2', role='button', data-slide='next')
+                      span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                      span.sr-only Next
+                .description
+                  h4
+                    a(href='product-details.html')  Slider FadeIn 
+                  .grid-description
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  .list-description
+                    p
+                      | Sed sed rutrum purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      | Pellentesque risus lacus, iaculis in ante vitae, viverra hendrerit ante. Aliquam vel
+                      | fermentum elit. Morbi rhoncus, neque in vulputate facilisis, leo tortor sollicitudin
+                      | odio, quis pellentesque lorem nisi quis enim. In dolor mi, hendrerit at blandit
+                      | vulputate, congue a purus. Sed eget turpis sit amet orci euismod accumsan. Praesent
+                      | sit amet placerat elit.
+                  span.size XL / XXL / S 
+                .price
+                  span $25
+                .action-control
+                  a.btn.btn-primary
+                    span.add2cart
+                      i.glyphicon.glyphicon-shopping-cart  
+                      |  Add to cart
+            .item.itemauto.col-sm-4.col-lg-4.col-md-4.col-xs-6
+              .product
+                a.add-fav.tooltipHere(data-toggle='tooltip', data-original-title='Add to Wishlist', data-placement='left')
+                  i.glyphicon.glyphicon-heart
+                .imageHover.hoverNav
+                  .quickview
+                    a.btn.btn-xs.btn-quickview(data-toggle='modal', data-target='#product-details-modal', title='Quick View')  Quick View 
+                  #carousel-id-3.carousel.slide(data-ride='carousel', data-interval='0')
+                    .carousel-inner(role='listbox')
+                      .item.active
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/10.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/5.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/22.jpg', alt='img')
+                    a.left.carousel-control(href='#carousel-id-3', role='button', data-slide='prev')
+                      span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                      span.sr-only Previous
+                    a.right.carousel-control(href='#carousel-id-3', role='button', data-slide='next')
+                      span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                      span.sr-only Next
+                .description
+                  h4
+                    a(href='product-details.html')  Hover Navigation 
+                  .grid-description
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  .list-description
+                    p
+                      | Sed sed rutrum purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      | Pellentesque risus lacus, iaculis in ante vitae, viverra hendrerit ante. Aliquam vel
+                      | fermentum elit. Morbi rhoncus, neque in vulputate facilisis, leo tortor sollicitudin
+                      | odio, quis pellentesque lorem nisi quis enim. In dolor mi, hendrerit at blandit
+                      | vulputate, congue a purus. Sed eget turpis sit amet orci euismod accumsan. Praesent
+                      | sit amet placerat elit.
+                  span.size XL / XXL / S 
+                .price
+                  span $25
+                .action-control
+                  a.btn.btn-primary
+                    span.add2cart
+                      i.glyphicon.glyphicon-shopping-cart  
+                      |  Add to cart
+            .item.itemauto.col-sm-4.col-lg-4.col-md-4.col-xs-6
+              .product
+                a.add-fav.tooltipHere(data-toggle='tooltip', data-original-title='Add to Wishlist', data-placement='left')
+                  i.glyphicon.glyphicon-heart
+                .imageHover
+                  .promotion
+                    span.discount 15% OFF
+                  #carousel-id-4.carousel.slide(data-ride='carousel', data-interval='0')
+                    ol.carousel-indicators
+                      li.active(data-target='#carousel-id-4', data-slide-to='0')
+                      li(data-target='#carousel-id-4', data-slide-to='1')
+                      li(data-target='#carousel-id-4', data-slide-to='2')
+                    .carousel-inner(role='listbox')
+                      .item.active
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/24.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/7.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/12.jpg', alt='img')
+                    a.left.carousel-control(href='#carousel-id-4', role='button', data-slide='prev')
+                      span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                      span.sr-only Previous
+                    a.right.carousel-control(href='#carousel-id-4', role='button', data-slide='next')
+                      span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                      span.sr-only Next
+                .description
+                  h4
+                    a(href='product-details.html')  Product Slider 
+                  .grid-description
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  .list-description
+                    p
+                      | Sed sed rutrum purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      | Pellentesque risus lacus, iaculis in ante vitae, viverra hendrerit ante. Aliquam vel
+                      | fermentum elit. Morbi rhoncus, neque in vulputate facilisis, leo tortor sollicitudin
+                      | odio, quis pellentesque lorem nisi quis enim. In dolor mi, hendrerit at blandit
+                      | vulputate, congue a purus. Sed eget turpis sit amet orci euismod accumsan. Praesent
+                      | sit amet placerat elit.
+                  span.size XL / XXL / S 
+                .price
+                  span $25
+                .action-control
+                  a.btn.btn-primary
+                    span.add2cart
+                      i.glyphicon.glyphicon-shopping-cart  
+                      |  Add to cart
+            .item.itemauto.col-sm-4.col-lg-4.col-md-4.col-xs-6
+              .product
+                a.add-fav.tooltipHere(data-toggle='tooltip', data-original-title='Add to Wishlist', data-placement='left')
+                  i.glyphicon.glyphicon-heart
+                .imageHover
+                  .promotion
+                    span.new-product  NEW
+                    span.discount 15% OFF
+                  #carousel-id-5.carousel.slide(data-ride='carousel')
+                    ol.carousel-indicators
+                      li.active(data-target='#carousel-id-5', data-slide-to='0')
+                      li(data-target='#carousel-id-5', data-slide-to='1')
+                      li(data-target='#carousel-id-5', data-slide-to='2')
+                    .carousel-inner(role='listbox')
+                      .item.active
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/4.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/9.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/17.jpg', alt='img')
+                    a.left.carousel-control(href='#carousel-id-5', role='button', data-slide='prev')
+                      span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                      span.sr-only Previous
+                    a.right.carousel-control(href='#carousel-id-5', role='button', data-slide='next')
+                      span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                      span.sr-only Next
+                .description
+                  h4
+                    a(href='product-details.html') Product Auto Slider 
+                  .grid-description
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  .list-description
+                    p
+                      | Sed sed rutrum purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      | Pellentesque risus lacus, iaculis in ante vitae, viverra hendrerit ante. Aliquam vel
+                      | fermentum elit. Morbi rhoncus, neque in vulputate facilisis, leo tortor sollicitudin
+                      | odio, quis pellentesque lorem nisi quis enim. In dolor mi, hendrerit at blandit
+                      | vulputate, congue a purus. Sed eget turpis sit amet orci euismod accumsan. Praesent
+                      | sit amet placerat elit.
+                  span.size XL / XXL / S 
+                .price
+                  span $25
+                .action-control
+                  a.btn.btn-primary
+                    span.add2cart
+                      i.glyphicon.glyphicon-shopping-cart  
+                      |  Add to cart
+            .item.itemauto.col-sm-4.col-lg-4.col-md-4.col-xs-6
+              .product
+                a.add-fav.tooltipHere(data-toggle='tooltip', data-original-title='Add to Wishlist', data-placement='left')
+                  i.glyphicon.glyphicon-heart
+                .imageHover.hoverNav
+                  .quickview
+                    a.btn.btn-xs.btn-quickview(data-toggle='modal', data-target='#product-details-modal', title='Quick View')  Quick View 
+                  #carousel-id-6.carousel.slide(data-ride='carousel')
+                    .carousel-inner(role='listbox')
+                      .item.active
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/34.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/8.jpg', alt='img')
+                      .item
+                        a(href='product-details.html')
+                          img.img-responsive(src='images/product/25.jpg', alt='img')
+                    a.left.carousel-control(href='#carousel-id-6', role='button', data-slide='prev')
+                      span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                      span.sr-only Previous
+                    a.right.carousel-control(href='#carousel-id-6', role='button', data-slide='next')
+                      span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                      span.sr-only Next
+                .description
+                  h4
+                    a(href='product-details.html')  Hover Navigation 
+                  .grid-description
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  .list-description
+                    p
+                      | Sed sed rutrum purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      | Pellentesque risus lacus, iaculis in ante vitae, viverra hendrerit ante. Aliquam vel
+                      | fermentum elit. Morbi rhoncus, neque in vulputate facilisis, leo tortor sollicitudin
+                      | odio, quis pellentesque lorem nisi quis enim. In dolor mi, hendrerit at blandit
+                      | vulputate, congue a purus. Sed eget turpis sit amet orci euismod accumsan. Praesent
+                      | sit amet placerat elit.
+                  span.size XL / XXL / S 
+                .price
+                  span $25
+                .action-control
+                  a.btn.btn-primary
+                    span.add2cart
+                      i.glyphicon.glyphicon-shopping-cart  
+                      |  Add to cart
+          .w100.categoryFooter
+            .pagination.pull-left.no-margin-top
+              ul.pagination.no-margin-top
+                li
+                  a(href='#') «
+                li.active
+                  a(href='#') 1
+                li
+                  a(href='#') 2
+                li
+                  a(href='#') 3
+                li
+                  a(href='#') 4
+                li
+                  a(href='#') 5
+                li
+                  a(href='#') »
+            .pull-right.pull-right.col-sm-4.col-xs-12.no-padding.text-right.text-left-xs
+              p Showing 1–450 of 12 results
+    .gap
+    #productSetailsModalAjax.modal.fade(tabindex='-1', role='dialog', aria-labelledby='productSetailsModalAjaxLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+   footer
+      .footer
+        .container
+          .row
+            .col-lg-3.col-md-3.col-sm-4.col-xs-6
+              h3  hỗ trợ 
+              ul
+                li.supportLi
+                  p  Mọi thắc mắc xin vui lòng liên hệ với chúng tôi
+                  h4
+                    a.inline(href='0967-399-470')
+                      strong
+                        i.fa.fa-phone  
+                        |  0967-399-470
+                  h4
+                    a.inline(href='http://templatecycle.com/cdn-cgi/l/email-protection#cca4a9a0bc8cb5a3b9bebba9aee2afa3a1')
+                      i.fa.fa-envelope-o  
+                      span.__cf_email__(data-cfemail='d9b1bcb5a999a0b6acabaebcbbf7bab6b4') huunam.mai95@gmail.com
+                      script(data-cfhash='f9e31', type='text/javascript').
+    
+            .col-lg-2.col-md-2.col-sm-4.col-xs-6
+              h3  Shop 
+              ul
+                li
+                  a(href='#')
+                    | LAPTOP
+                li
+                  a(href='#')
+                    | ĐIỆN THOẠI
+                li
+                  a(href='#')
+                    | MÁY TÍNH BẢNG
+                li
+                  a(href='#')
+                    | PHỤ KIỆN
+               
+            .hide.visible-xs(style='clear:both')
+            .col-lg-2.col-md-2.col-sm-4.col-xs-6
+              h3  THÔNG TIN
+              ul.list-unstyled.footer-nav
+                li
+                  a(href='#')
+                    | Câu hỏi ?
+                li
+                  a(href='#')
+                    | Chính sách
+                li
+                  a(href='#')
+                    | Liên hệ
+                li
+                  a(href='#')  Thông tin về shopNAMMAI 
+              
+            .col-lg-2.col-md-2.col-sm-4.col-xs-6
+              h3  TÀI KHOẢN CỦA TÔI
+              ul
+                li
+                  a(href='account.html')  Tài khoản của tôi 
+                li
+                  a(href='my-address.html')  Địa chỉ của tôi
+                li
+                  a(href='wishlist.html')  Danh sách đơn đặt hàng
+                 
+            .col-lg-3.col-md-3.col-sm-6.col-xs-12
+              h3  Stay in touch 
+              ul
+                li
+                  .input-append.newsLatterBox.text-center
+                    input.full.text-center(type='text', placeholder='Email ')
+                    button.btn.bg-gray(type='button')
+                      | Subscribe 
+                      i.fa.fa-long-arrow-right  
+              ul.social
+                li
+                  a(href='http://facebook.com/')
+                    i.fa.fa-facebook    
+                li
+                  a(href='http://twitter.com/')
+                    i.fa.fa-twitter    
+                li
+                  a(href='https://plus.google.com/')
+                    i.fa.fa-google-plus    
+                li
+                  a(href='http://youtube.com/')
+                    i.fa.fa-pinterest    
+                li
+                  a(href='http://youtube.com/')
+                    i.fa.fa-youtube   
+                        footer.main-footer                       
+        .pull-right.hidden-xs
+          b Version
+          |  1.0.0
+       strong
+          | Copyright @ 2016-2017 
+          a(href='http://shopNAMMAI.com') 
+            |  Bảng quyền thuộc 
+            |  về shopNAMMAI
+         
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(type='text/javascript', src='assets/js/jquery.parallax-1.1.js')
+    script(type='text/javascript', src='assets/js/helper-plugins/jquery.mousewheel.min.js')
+    script(type='text/javascript', src='assets/js/jquery.mCustomScrollbar.js')
+    script(type='text/javascript', src='assets/plugins/icheck-1.x/icheck.min.js')
+    script(src='assets/js/grids.js')
+    script(src='assets/js/owl.carousel.min.js')
+    script(src='../../../../cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js')
+    script(src='assets/js/bootstrap.touchspin.js')
+    script(src='assets/js/script.js')
+    script(type='text/javascript').
+      /* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */
+  // Mirrored from templatecycle.com/tshop/v-1.5/gray/category-product-slide.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Oct 2016 06:11:08 GMT

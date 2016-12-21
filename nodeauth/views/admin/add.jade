@@ -1,0 +1,1082 @@
+block header
+block content
+doctype html
+//if IE 8
+  html.ie8  
+//if IE 9
+  html.ie9  
+// [if gt IE 9] <!
+html
+  // <![endif]
+  head
+    link(rel='shortcut icon', href='//bizweb.dktcdn.net/assets/admin/favicon.ico')
+    link(rel='manifest', href='/manifest.json')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title nammai | Sản phẩm
+    meta(content='', name='description')
+    meta(name='viewport', content='width=device-width')
+    link(href='/admin/css/dist/default.min.css', rel='stylesheet')
+    meta(name='bizweb-admin-context', content='{"store":{"settings":{"store_name":"nammai","timezone":"SE Asia Standard Time","tzinfo":"Asia/Bangkok","currency":"VND","money_format":"{{amount_no_decimals_with_comma_separator}}₫","money_symbol":"₫","money_with_currency_format":"{{amount_no_decimals_with_comma_separator}} VND","created_on":"2016-12-10T08:15:08Z"},"domain":"nammai.bizwebvietnam.net"},"current_user":{"id":173932,"name":"nguyen an","email":"chuotyeugao123789@gmail.com","account_owner":true,"account_access":"Account owner","permissions":"sales,products,orders,customers,discounts,content,navigation,themes,application,storesetting,reports,script_tags","is_employee":false}}')
+    style.
+      .btn.btn-more {
+      border: 1px solid #d3dbe2;
+      padding: 6px 15px;
+      }
+      .btn.btn-more:hover {
+      border: 1px solid #d3dbe2;
+      background-color: #f5f6f7;
+      color: #479ccf;
+      text-decoration: none;
+      }
+      .btn-more:before {
+      content: "•••";
+      text-indent: 0;
+      display: block;
+      font-size: 13px;
+      }
+    //if lt IE 9
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js')
+      script(src='/themes/portal/admin/assets/libs/respond/respond.min.js')
+    script(type='text/javascript').
+      var currentDate = new Date(2016,11,10,15,23,23,997);
+      setInterval(function(){
+      currentDate.setMinutes(currentDate.getMinutes() + 1);
+      },60000);
+      function addDOMLoadedEvent(func) {
+      if (document.readyState === 'complete') {
+      func();
+      } else {
+      if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", func, false);
+      }
+      else {
+      document.attachEvent("onDOMContentLoaded", func);
+      }
+      }
+      }
+      function addLoadEvent(func) {
+      if (document.readyState === 'complete') {
+      func();
+      } else {
+      var oldonload = window.onload;
+      if (typeof window.onload != 'function') {
+      window.onload = func;
+      } else {
+      window.onload = function () {
+      if (oldonload) {
+      oldonload();
+      }
+      func();
+      }
+      }
+      }
+      }
+  body
+    .page-wrapper
+      .page-wrapper-sub
+        aside.sidebar.sidebar-default(define='{navDrawer: new Bizweb.Drawer(this)}')
+          .header-logo
+            a.navbar-logo(href='/admin/dashboard')
+              span
+                img(src='/assets/images/bizweb-logo.png', title='Bizweb', style='width:125px;')
+            a.view-storefront(href='http://nammai.bizwebvietnam.net', target='_blank', title='Xem website của bạn')
+              i.fa.fa-lg.fa-external-link
+          nav
+            ul.nav.nav-pills.nav-stacked
+              li.hidden-xs
+                form(action='/admin/products', method='get', novalidate='novalidate')
+                  .navbar-search
+                    input.form-control(type='text', name='query', placeholder='Tìm kiếm …')
+                    button.btn(type='submit')
+                      i.fa.fa-search
+              li
+                a(href='/admin/dashboard', title='Trang chủ')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-home
+                  |  Trang chủ
+              li
+                a(href='/admin/orders', title='Đơn hàng')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-credit-card
+                  |  Đơn hàng
+                  span.label.label-opening-order.pull-right.opening-order(bind='navDrawer.numOfOpenningOrder', bind-show='navDrawer.numOfOpenningOrder > 0', data-placement='top', data-toggle='tooltip', data-original-title='Đơn hàng đang xử lý')
+              li.active.open
+                a(href='/admin/products', title='Sản phẩm')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-tag
+                  |  Sản phẩm
+              li
+                a(href='/admin/collections', title='Danh mục sản phẩm')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-tags
+                  |  Danh mục sản phẩm
+              li
+                a(href='/admin/customers', title='Khách hàng')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-users
+                  |  Khách hàng
+              li
+                a(href='/admin/discounts', title='Khuyến mãi')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-volume-up
+                  |  Khuyến mãi
+              li.separate
+              li
+                a(href='/admin/pages', title='Trang nội dung')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-file-text
+                  |  Trang nội dung
+              li.slide-bar-more-2-item-4
+                a(href='/admin/articles', title='Bài viết')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-comment
+                  |  Blog
+              li.slide-bar-more-2-item-3
+                a(href='/admin/links', title='Menu')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-sitemap
+                  |  Menu
+              li.slide-bar-more-2-item-2
+                a(href='/admin/themes', title='Giao diện')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-desktop
+                  |  Giao diện
+              li.slide-bar-more-2-item-1
+                a(href='/admin/settings/files', title='File')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-folder-open
+                  |  File
+              li.separate
+              li
+                a(href='/admin/apps', title='Ứng dụng')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-cubes
+                  |  Ứng dụng
+              li.nav-dropdown
+                a(href='#', title='Cấu hình')
+                  i.text-muted.fa.fa-lg.fa-fw.fa-cogs
+                  |  Cấu hình
+                ul.nav-sub
+                  li
+                    a(href='/admin/settings/store', title='Cấu hình')
+                      i.text-muted.fa.fa-lg.fa-fw.fa-cog
+                      |  Cấu hình chung
+                  li
+                    a(href='/admin/settings/notifications', title='Thông báo')
+                      i.text-muted.fa.fa-lg.fa-fw.fa-rss
+                      |  Thông báo
+                  li
+                    a(href='/admin/settings/checkout', title='Thanh toán')
+                      i.text-muted.fa.fa-lg.fa-fw.fa-shopping-cart
+                      |  Thanh toán
+                  li
+                    a(href='/admin/settings/shipping', title='Vận chuyển')
+                      i.text-muted.fa.fa-lg.fa-fw.fa-truck
+                      |  Vận chuyển
+                  li
+                    a(href='/admin/settings/addresses', title='Địa chỉ cửa hàng')
+                      i.text-muted.fa.fa-lg.fa-fw.fa-map-marker
+                      |  Địa chỉ cửa hàng
+                  li
+                    a(href='/admin/settings/domains', title='Tên miền')
+                      i.text-muted.fa.fa-lg.fa-fw.fa-globe
+                      |  Tên miền
+                  li
+                    a(href='/admin/settings/account', title='Tài khoản')
+                      i.text-muted.fa.fa-lg.fa-fw.fa-user
+                      |  Tài khoản
+                  li
+                    a(href='/admin/channels', title='Kênh bán hàng')
+                      i.text-muted.fa.fa-lg.fa-fw.fa-share-alt-square
+                      |  Kênh bán hàng
+                  li
+                    a(href='/admin/settings/plans', title='Gói dịch vụ')
+                      i.text-muted.fa.fa-lg.fa-fw.fa-suitcase
+                      |  Gói dịch vụ
+          .nav-user
+            .dropdown.dropup.account-info
+              a.account-info-trigger(data-toggle='dropdown', href='javascript:void(0)')
+                img.profile-pic.img-circle(data-name='an ')
+                img.profile-pic-gravatar.img-circle(style='position: absolute; top: 0; left: 0;', src='https://secure.gravatar.com/avatar/c2eb71f0d889175d221247319dbf2b9d.jpg?s=45&d=blank')
+                span nguyen an
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='/admin/settings/account/173932') Tài khoản của bạn
+                li
+                  a(href='/admin/settings/account/173932') Đổi mật khẩu
+                li.divider
+                li
+                  a(target='_blank', href='https://docs.bizweb.vn/quy-dinh-su-dung-87.html') Điều khoản dịch vụ
+                li
+                  a(target='_blank', href='https://docs.bizweb.vn/chinh-sach-bao-mat-88.html') Chính sách bảo mật
+                li.divider
+                li
+                  a.link-logout(href='/admin/authorization/logout') Đăng xuất
+          style.
+            .tooltip > .tooltip-inner {
+            font-size: 9px;
+            }
+            .tooltip.top > .tooltip-arrow {
+            border-top: 5px solid black;
+            margin-top: 20px;
+            margin-left: 15px;
+            }
+        .page-content.clearfix
+          .page-body
+            a.btn.btn-default.nav-toggle(bind-event-click='navDrawer.toggle()')
+              i.fa.fa-lg.fa-fw.fa-bars
+            #content.page-body-render(bind-event-click='navDrawer.close()')
+              style(type='text/css').
+                .note {
+                color: #798c9c;
+                font-weight: normal;
+                text-transform: none;
+                }
+                .show-when-scroll{
+                display:none;
+                text-align: center;
+                background-color: #FFF;
+                border-top: 1px solid #DDD;
+                }
+                .show-when-scroll .dataTables_info{
+                display:none;
+                }
+                @media (max-width:375px) and (min-width:321px){
+                .show-when-scroll{
+                font-size:12px
+                }
+                }
+                @media (max-width:320px){
+                .show-when-scroll{
+                font-size:11px
+                }
+                .show-when-scroll .pagination>li>a, .pagination>li>span{
+                padding: 7px 9px;
+                }
+                }
+                .display-pagging-mobile{
+                display:initial;
+                }
+                @media (max-width:768px)
+                {
+                .bulk-actions-mobile{
+                left:22px !important;
+                }
+                }
+                @media (min-width:419px)
+                {
+                .enter-text-select{
+                display:none;
+                }
+                }
+                @media (max-width:418px) and (min-width:365px){
+                .enter-text-select{
+                display:initial;
+                }
+                .selection-count-mobile{
+                font-size:12px;
+                padding: 1px 12px 1px 30px !important;
+                line-height:14px;
+                }
+                .btn-edit-product-mobile{
+                font-size:12px !important;
+                padding: 7px 20px 7px 20px;
+                padding-left:20px !important;
+                }
+                .btn-dropdown-mobile{
+                font-size: 12px !important;
+                padding: 7px 10px 7px 10px;
+                padding-left:10px !important
+                }
+                .checkbox-bulkactions-mobile{
+                top:3px;
+                }
+                .dropdown-menu-product-mobile{
+                left:-90px;
+                }
+                .dropdown-menu-product-mobile.arrow-style:not(.pull-right):before, .dropdown-menu-product-mobile.arrow-style:not(.pull-right):after {
+                left: 150px;
+                }
+                }
+                @media (max-width:364px)
+                {
+                .enter-text-select{
+                display:initial;
+                }
+                .selection-count-mobile{
+                font-size:12px;
+                padding: 1px 8px 1px 25px !important;
+                line-height:14px;
+                }
+                .btn-edit-product-mobile{
+                font-size:12px !important;
+                padding: 7px 15px 7px 15px;
+                padding-left:15px !important;
+                }
+                .btn-dropdown-mobile{
+                font-size: 12px !important;
+                padding: 7px 5px 7px 5px;
+                padding-left:5px !important
+                }
+                .checkbox-bulkactions-mobile{
+                top:3px;
+                }
+                .dropdown-menu-product-mobile{
+                left:-90px;
+                }
+                .dropdown-menu-product-mobile.arrow-style:not(.pull-right):before, .dropdown-menu-product-mobile.arrow-style:not(.pull-right):after {
+                left: 150px;
+                }
+                }
+                @media (max-width:899px){
+                .list-products .t-grid-pager-boder .col-xs-5{
+                width:100%;
+                margin-bottom:5px
+                }
+                .list-products .t-grid-pager-boder .col-xs-7{
+                width:100%;
+                margin-bottom:5px
+                }
+                .list-products .t-grid-pager-boder .dataTables_paginate{
+                float:unset;
+                }
+                }
+                @media(max-width:768px){
+                .list-products .t-grid-pager-boder .col-xs-5 .dataTables_info{
+                padding-left:5px;
+                }
+                .list-products .t-grid-pager-boder .dataTables_paginate{
+                padding-left:5px;
+                }
+                }
+                @media (max-width:405px)
+                {
+                .list-products .dataTables_paginate ul.pagination{
+                margin:0px;
+                }
+                }
+                /*@media (max-width:399px) {
+                .products .pagination > li:first-child > a {
+                border-radius: 0;
+                border-left: 0;
+                }
+                .pagination > li:last-child > a {
+                border-radius: 0;
+                border-right: 0;
+                }
+                }*/
+              form#frmAction(method='post')
+                input(type='hidden', name='returnUrl', value='/admin/products')
+                input(type='hidden', name='id', value='')
+              #bizweb-modal.modal.fade(data-width='', tabindex='-1', role='dialog')
+              form#frmRemoveSavedSearch(method='post')
+                input(type='hidden', name='returnUrl', value='/admin/products')
+                input(type='hidden', name='savedSearchId', value='')
+              form#frmFilter(method='get')
+                input(type='hidden', name='Query', value='')
+              form#frmBulkActions(method='get')
+              .list-products(define="{productsImportAndExport:new Bizweb.ProductsImportAndExport(this, {'products_match_current_search':21})}", context='productsImportAndExport')
+                .page-heading.page-heading-md
+                  h2.header__main
+                    span.breadcrumb.hidden-xs
+                      i.fa.fa-tag
+                    span.title Sản phẩm
+                  .header-right
+                    .btn-group.btn-group-filter.hidden-xs
+                      a.btn.btn-default(href='javascript:void(0)', bind-event-click='showExportProducts()') Xuất
+                      a.btn.btn-default(bind-event-click='openFileImportProducts()', href='javascript:void(0)') Nhập danh sách sản phẩm
+                    a.btn.btn-default(href='/admin/products/inventory')
+                      span.hidden-xs Quản lý kho
+                      span.hidden-lg.hidden-md.hidden-sm Kho
+                    a.btn.btn-default.btn-add(href='/admin/products/create')
+                      span Thêm mới
+                .container-fluid-md.notifications
+                  .ajax-notification
+                    span.ajax-notification-message
+                    a.close-notification(onclick='Bizweb.Flash.hide()')
+                      i.fa.fa-times
+                style.
+                  .dropdown-menu-header-product.arrow-style:not(.pull-right):before, .dropdown-menu-header-product.arrow-style:not(.pull-right):after{
+                  left:unset;
+                  }
+                  .dropdown-menu-header-product > li:hover{
+                  }
+                  .dropdown-menu-header-product > li > a{
+                  color:#479ccf
+                  }
+                  .dropdown-menu-header-product > li:hover > a{
+                  color:#fff;
+                  background-color:#479ccf
+                  }
+                  @media (max-width:458px){
+                  .apps-dropdown .dropdown-menu{
+                  left:-45px !important;
+                  }
+                  .shortcut-link-detail .dropdown-menu.arrow-style:not(.pull-right):before, .shortcut-link-detail .dropdown-menu.arrow-style:not(.pull-right):after{
+                  left:68px !important;
+                  }
+                  }
+                .container-fluid-md
+                  .panel.panel-default.has-bulk-actions
+                    .filters(context='filterandsavedsearch', define='{filterandsavedsearch: new Bizweb.FilterAndSavedSearch(this,{"type_filter":"products"})}')
+                      ul#filter-tab-list.filter-tab-list.overflow-hidden-x
+                        li.filter-tab-item(data-tab-index='1')
+                          a.filter-tab.filter-tab-active(href='/admin/products') Tất cả sản phẩm
+                        li#hidden-search.dropdown-container(style='display:none')
+                          a.dropdown-toggle.btn-hidden-search.filter-tab(data-toggle='dropdown')
+                            | Xem thêm
+                            span.caret
+                          ul#dropdown-hidden-search.dropdown-menu.arrow-style.dropdown-hidden-search.pull-right.padding-sm
+                      .filter-container
+                        .btn-group.btn-group-filter.next-field__connected-wrapper
+                          .next-field--connected--no-flex
+                            a.btn.btn-default.dropdown-toggle.btn-filter
+                              | Điều kiện lọc
+                              span.caret
+                            .dropdown-menu.arrow-style.dropdown-filter
+                              .arrow
+                              .filters
+                                label.filter-title Hiển thị sản phẩm theo:
+                                .filter-content
+                                  select#filter-conditions.form-control.form-selectboxit(bind='filterKey', bind-event-change='resetFilter()')
+                                    option Chọn điều kiện lọc...
+                                    option(value='visibility') Hiển thị
+                                    option(value='productType') Loại sản phẩm
+                                    option(value='vendor') Nhà cung cấp
+                                    option(value='tag') Đã được tag với
+                                  .inline.filter-choose.hide(bind-show="filterKey == 'visibility'")
+                                    select.form-control.form-selectboxit.filter-select(bind='option')
+                                      option(value='') Chọn điều kiện lọc...
+                                      option(value='visibility') Hiển thị
+                                      option(value='hidden') Ẩn
+                                    input.btn.btn-default.add-filter.filtering-complete(type='button', value='Lọc', bind-event-click='submitFilter(this)')
+                                  .inline.filter-choose.hide(bind-show="filterKey == 'productType'")
+                                    select.form-control.form-selectboxit.filter-select(bind='option')
+                                      option(value='') Chọn điều kiện lọc...
+                                      option(value='Điện thoại') Điện thoại
+                                      option(value='Máy ảnh') Máy ảnh
+                                      option(value='Máy tính') Máy tính
+                                      option(value='Máy tính bảng') Máy tính bảng
+                                      option(value='Phụ kiện điện thoại') Phụ kiện điện thoại
+                                      option(value='Phụ kiện máy tính') Phụ kiện máy tính
+                                    input.btn.btn-default.add-filter.filtering-complete(type='button', value='Lọc', bind-event-click='submitFilter(this)')
+                                  .inline.filter-choose.hide(bind-show="filterKey == 'vendor'")
+                                    select.form-control.form-selectboxit.filter-select(bind='option')
+                                      option(value='') Chọn điều kiện lọc...
+                                      option(value='Acer') Acer
+                                      option(value='Apple') Apple
+                                      option(value='Lenovo') Lenovo
+                                      option(value='LG') LG
+                                      option(value='Nokia') Nokia
+                                      option(value='Samsung') Samsung
+                                      option(value='Sony') Sony
+                                    input.btn.btn-default.add-filter.filtering-complete(type='button', value='Lọc', bind-event-click='submitFilter(this)')
+                                  .inline.filter-choose.hide(bind-show="filterKey == 'tag'")
+                                    input.form-control.inline.filter-input(type='text', bind='value', bind-class='{error: isValid}')
+                                    input.btn.btn-default.add-filter.filtering-complete(type='button', value='Lọc', bind-event-click='submitFilter(this)')
+                          .next-form.next-form--full-width
+                            form(action='/admin/products', bind-event-submit='submitQuery()', method='get')
+                              input.form-control.form-large.search-input(type='text', placeholder='Nhập từ khóa tìm kiếm ...(Tên sản phẩm, Tên variant, SKU, Tag)', bind='query', bind-event-input='submitQuery()', value='')
+                          #saved-search-actions-next.segmented.next-field--connected--no-flex.saved-search-actions-next
+                        .btn-group.btn-group-filter
+                          .btn-group
+                            .bootstrap-tagsinput(style='border:0;')
+                    .products
+                      div(define='{bulkActions: new Bizweb.ProductBulkActions(this,{"type":"sản phẩm"})}', context='bulkActions')
+                        .panel-body.bulk-action-context
+                          .table-responsive
+                            table#all-products.table.table-hover.vert-align
+                              colgroup
+                                col
+                                col(style='width:50px;')
+                                col(style='max-width:120px;')
+                                col(style='width:250px;')
+                                col(style='width:150px;')
+                                col(style='width:150px;')
+                              thead
+                                tr
+                                  th.select.select-all.not-select
+                                    span
+                                      input.js-no-dirty.all-bulk-action.checkbox-bulkactions-mobile(type='checkbox', bind-event-change='addOrRemoveAllBulkActionItems(this)')
+                                    .bulk-actions.hide.bulk-actions-mobile(all-items='21', items-page='50', total-records='21')
+                                      ul
+                                        li
+                                          span.selection-count.bulk-action-items-count.selection-count-mobile(selected-bulk-action-items='0')
+                                            | Đã chọn 
+                                            span.display-bulk-action-items-count
+                                            br.enter-text-select
+                                            |  sản phẩm
+                                        li
+                                          a.btn.btn-default.btn-sm.btn-edit-product-mobile(bind-event-click='Bizweb.BulkEditor.goToBulkEditor( "Product", { defaultEditColumns: "variants.sku,variants.price,variants.compare_at_price", defaultShowColumns: "", returnTo: "\/admin\/products", useSearch: true && allSelected(), ids: selectedItems.join(\',\') })', track-click="{category: 'Bulk editor', action: 'Bulk actions: Edit products'}")
+                                            | Sửa 
+                                            span.hidden-xs sản phẩm
+                                        li
+                                          span.dropdown
+                                            a.btn.btn-default.btn-sm.dropdown-toggle.btn-dropdown-mobile(data-toggle='dropdown')
+                                              | Chọn thao tác
+                                              span.caret
+                                            ul.dropdown-menu.arrow-style.dropdown-menu-product-mobile(role='menu')
+                                              li
+                                                a.perform-publish(href='javascript:;', bind-event-click='publishItems()', define="{urlBulkActionPublish:'/admin/products/bulkpublish'}") Hiện
+                                              li
+                                                a.perform-unpublish(href='javascript:;', bind-event-click='unPublishItems()', define="{urlBulkActionUnPublish:'/admin/products/bulkunpublish'}") Ẩn
+                                              li
+                                                a.perform-delete(define="{urlBulkActionDelete:'/admin/products/bulkdelete'}", href='javascript:void(0);', bind-event-click='showDeleteItemsModal()') Xóa sản phẩm
+                                              li.divider
+                                              li
+                                                a.perform-add-tags(href='javascript:void(0)', define="{urlBulkActionAddTag:'/admin/products/bulkaddtags'}", bind-event-click='addTags()') Thêm tags
+                                              li
+                                                a.perform-remove-tags(href='', define="{urlBulkActionRemoveTag:'/admin/products/bulkremovetags'}", bind-event-click='removeTags()') Xóa tags
+                                              li.divider
+                                              li
+                                                a.perform-add-to-collections(href='javascript:void(0)', define="{urlBulkActionAddCollections:'/admin/products/bulkaddcollections'}", bind-event-click='addCollections()') Thêm sản phẩm vào danh mục
+                                              li
+                                                a.perform-remove-from-collections(href='', define="{urlBulkActionRemoveCollections:'/admin/products/bulkremovecollections'}", bind-event-click='removeCollections()') Xóa sản phẩm khỏi danh mục
+                                      span.bulk-select-all
+                                        p.bulk-action-all-selector
+                                          span.bulk-action-all.hidden-xs
+                                          a.multipage-selected-all.hide(href='javascript:void(0);', bind-event-click='addBulkActionAll()') Chọn tất cả sản phẩm
+                                          a.clear-multipage-selection.hide(href='javascript:void(0);', bind-event-click='removeBulkActionAll()') Bỏ chọn
+                                  th
+                                  th Sản phẩm
+                                  th Kho hàng
+                                  th Loại
+                                  th Nhà cung cấp
+                              tbody
+                                tr
+                                  td.select
+                                    input#bulk-action-5029055.bulk-action-item(type='checkbox', value='5029055', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029055,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/4320312cooler-master-notepal-ergostand-ii-04-1-40f1c4c2-4a18-4ba5-b20f-71e5948333c1.jpg?v=1481357734000')
+                                  td.title
+                                    a(href='/admin/products/5029055') Đế tản nhiệt XCM N19
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Phụ kiện máy tính
+                                  td
+                                    p
+                                tr
+                                  td.select
+                                    input#bulk-action-5029054.bulk-action-item(type='checkbox', value='5029054', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029054,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/5341643lg-g-pro-lite-dual-01-1.jpg?v=1481357733000')
+                                  td.title
+                                    a(href='/admin/products/5029054') LG G Pro Lite Dual
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Điện thoại
+                                  td
+                                    p LG
+                                tr
+                                  td.select
+                                    input#bulk-action-5029053.bulk-action-item(type='checkbox', value='5029053', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029053,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/5323595lg-optimus-g-pro-1.jpg?v=1481357732000')
+                                  td.title
+                                    a(href='/admin/products/5029053') LG G Pro 2
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Điện thoại
+                                  td
+                                    p LG
+                                tr
+                                  td.select
+                                    input#bulk-action-5029052.bulk-action-item(type='checkbox', value='5029052', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029052,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/5131967lg-l70-1.jpg?v=1481357732000')
+                                  td.title
+                                    a(href='/admin/products/5029052') LG L70
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Điện thoại
+                                  td
+                                    p LG
+                                tr
+                                  td.select
+                                    input#bulk-action-5029051.bulk-action-item(type='checkbox', value='5029051', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029051,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/0010687nokiax6-8gb-1.jpg?v=1481357731000')
+                                  td.title
+                                    a(href='/admin/products/5029051') Nokia X6 8GB
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Điện thoại
+                                  td
+                                    p Nokia
+                                tr
+                                  td.select
+                                    input#bulk-action-5029050.bulk-action-item(type='checkbox', value='5029050', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029050,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/5425773apple-iphone-4-1.jpg?v=1481357730000')
+                                  td.title
+                                    a(href='/admin/products/5029050') iPhone 4 16GB
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Điện thoại
+                                  td
+                                    p Apple
+                                tr
+                                  td.select
+                                    input#bulk-action-5029049.bulk-action-item(type='checkbox', value='5029049', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029049,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/54115944s-1.jpg?v=1481357729000')
+                                  td.title
+                                    a(href='/admin/products/5029049') iPhone 4s 32GB
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Điện thoại
+                                  td
+                                    p Apple
+                                tr
+                                  td.select
+                                    input#bulk-action-5029048.bulk-action-item(type='checkbox', value='5029048', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029048,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/5829839ipad-3g-2-1.jpg?v=1481357729000')
+                                  td.title
+                                    a(href='/admin/products/5029048') iPad Wifi 3G 16GB
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Máy tính bảng
+                                  td
+                                    p Apple
+                                tr
+                                  td.select
+                                    input#bulk-action-5029047.bulk-action-item(type='checkbox', value='5029047', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029047,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/5810839ipad-2-wifi-1-1.jpg?v=1481357727000')
+                                  td.title
+                                    a(href='/admin/products/5029047') iPad 2 Wifi 64GB
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Máy tính bảng
+                                  td
+                                    p Apple
+                                tr
+                                  td.select
+                                    input#bulk-action-5029046.bulk-action-item(type='checkbox', value='5029046', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029046,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/5755708samsung-galaxy-tab-4-101-2-1.jpg?v=1481357727000')
+                                  td.title
+                                    a(href='/admin/products/5029046') Samsung Galaxy Tab 10.1 3G
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Máy tính bảng
+                                  td
+                                    p Samsung
+                                tr
+                                  td.select
+                                    input#bulk-action-5029045.bulk-action-item(type='checkbox', value='5029045', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029045,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/0413707acer-aspire-5745-450px-4-1.jpg?v=1481357726000')
+                                  td.title
+                                    a(href='/admin/products/5029045') Acer Aspire 5745G 382G50Mn
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Máy tính
+                                  td
+                                    p Acer
+                                tr
+                                  td.select
+                                    input#bulk-action-5029044.bulk-action-item(type='checkbox', value='5029044', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029044,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/0513889lenovo-ideapad-z360-049390-1.jpg?v=1481357725000')
+                                  td.title
+                                    a(href='/admin/products/5029044') Lenovo IdeaPad Z360 (049390)
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Máy tính
+                                  td
+                                    p Lenovo
+                                tr
+                                  td.select
+                                    input#bulk-action-5029043.bulk-action-item(type='checkbox', value='5029043', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029043,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/0034585sony-vaio-vpc-z1390x-cto-1-1.jpg?v=1481357725000')
+                                  td.title
+                                    a(href='/admin/products/5029043') Sony Vaio VPC EB3AFX
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Máy tính
+                                  td
+                                    p Sony
+                                tr
+                                  td.select
+                                    input#bulk-action-5029042.bulk-action-item(type='checkbox', value='5029042', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029042,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/51087093-1.jpg?v=1481357724000')
+                                  td.title
+                                    a(href='/admin/products/5029042') Sony Alpha a58
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Máy ảnh
+                                  td
+                                    p Sony
+                                tr
+                                  td.select
+                                    input#bulk-action-5029041.bulk-action-item(type='checkbox', value='5029041', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029041,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/505134713-2-1.jpg?v=1481357723000')
+                                  td.title
+                                    a(href='/admin/products/5029041') Sony Cybershot 14.1px
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Máy ảnh
+                                  td
+                                    p Sony
+                                tr
+                                  td.select
+                                    input#bulk-action-5029040.bulk-action-item(type='checkbox', value='5029040', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029040,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/503903915-1-1.jpg?v=1481357722000')
+                                  td.title
+                                    a(href='/admin/products/5029040') Samsung EC-WB50FZBDBVN
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Máy ảnh
+                                  td
+                                    p Samsung
+                                tr
+                                  td.select
+                                    input#bulk-action-5029039.bulk-action-item(type='checkbox', value='5029039', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029039,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/4759147loa-icore-700-1.jpg?v=1481357722000')
+                                  td.title
+                                    a(href='/admin/products/5029039') Loa iCore IC-38 Hifi Bluetooth Mini Speaker
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Phụ kiện điện thoại
+                                  td
+                                    p
+                                tr
+                                  td.select
+                                    input#bulk-action-5029038.bulk-action-item(type='checkbox', value='5029038', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029038,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/4710041sac1-1.jpg?v=1481357721000')
+                                  td.title
+                                    a(href='/admin/products/5029038') Sạc ĐTDĐ chân V8
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Phụ kiện điện thoại
+                                  td
+                                    p
+                                tr
+                                  td.select
+                                    input#bulk-action-5029037.bulk-action-item(type='checkbox', value='5029037', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029037,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/4500006combo-dan-flim-dan-man-hinh-cho-ipad-id27193-1.jpg?v=1481357721000')
+                                  td.title
+                                    a(href='/admin/products/5029037') Miếng dán film, dán màn hình
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Phụ kiện máy tính
+                                  td
+                                    p
+                                tr
+                                  td.select
+                                    input#bulk-action-5029036.bulk-action-item(type='checkbox', value='5029036', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029036,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/4320312cooler-master-notepal-ergostand-ii-04-1.jpg?v=1481357720000')
+                                  td.title
+                                    a(href='/admin/products/5029036') Đế tản nhiệt XCM N19
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Phụ kiện máy tính
+                                  td
+                                    p
+                                tr
+                                  td.select
+                                    input#bulk-action-5029034.bulk-action-item(type='checkbox', value='5029034', name='product_ids', bind-event-change='addOrRemoveBulkActionItem(5029034,this)')
+                                  td
+                                    img.product-thumb(src='//bizweb.dktcdn.net/thumb/thumb/100/161/722/products/4236103aonike-cd-150-1-1.jpg?v=1481357714000')
+                                  td.title
+                                    a(href='/admin/products/5029034') Tai nghe Aonike CD-150
+                                  td
+                                    p
+                                      span.note.strong(data-original-title='Không quản lý kho hàng', data-placement='top', data-toggle='tooltip')
+                                        strong ---
+                                  td
+                                    p Phụ kiện máy tính
+                                  td
+                                    p
+                            .t-grid-pager-boder
+                              .t-pager.t-reset
+                                .col-xs-5.no-padding
+                                  .t-status-text.dataTables_info Hiển thị kết quả từ 1 - 21 trên tổng 21 
+                        script.modal_source(define='{deleteItemsModal: new Bizweb.Modal(this)}', type='text/html').
+                          <div class="modal-dialog">
+                          <div class="modal-content">
+                          <div class="modal-header">
+                          <button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+                          <h4 class="modal-title">Bạn chắc chắn muốn xóa các sản phẩm này?</h4>
+                          </div>
+                          <div class="modal-body product-option-edit">
+                          <p>Thao tác này sẽ xóa các sản phẩm bạn đã chọn. Thao tác này không thể khôi phục.</p>
+                          <form class="form-delete-items"></form>
+                          </div>
+                          <div class="modal-footer">
+                          <div class="form-actions row">
+                          <div class="col-sm-5 pull-right text-right">
+                          <button class="btn btn-default btn-back close-modal" type="button">Hủy</button>
+                          <button class="btn btn-danger btn-delete-bulk-action" type="button" bind-event-click="deleteItems()">Xóa</button>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                      div(define='{products_match_current_search: 21}')
+                .show-when-scroll.hidden-lg.hidden-md.hidden-sm
+                  .t-grid-pager-boder
+                    .t-pager.t-reset
+                      .col-xs-5.no-padding
+                        .t-status-text.dataTables_info Hiển thị kết quả từ 1 - 21 trên tổng 21 
+                script.modal_source(define='{exportProductsModal: new Bizweb.Modal(this)}', type='text/html').
+                  <div class="modal-dialog">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                  <button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+                  <h4 class="modal-title">Xuất danh sách sản phẩm</h4>
+                  </div>
+                  <div class="modal-body">
+                  <form id="form-export-products">
+                  <input type="hidden" name="Query" />
+                  <input type="hidden" name="visibility" />
+                  <input type="hidden" name="productType" />
+                  <input type="hidden" name="vendor" />
+                  <input type="hidden" name="tag" />
+                  <input type="hidden" name="page" />
+                  <div class="radio">
+                  <label>
+                  <input type="radio" name="exportProductsType" id="exportProductsType-current-page" value="currentPage" checked>
+                  Trên trang này
+                  </label>
+                  </div>
+                  <div class="radio">
+                  <label>
+                  <input type="radio" name="exportProductsType" id="exportProductsType-all-products" value="allProducts">
+                  Tất cả sản phẩm
+                  </label>
+                  </div>
+                  <div class="radio">
+                  <label>
+                  <input type="radio" name="exportProductsType" id="exportProductsType-selected-products" value="selectedProducts">
+                  Các sản phẩm được chọn
+                  </label>
+                  </div>
+                  <div class="radio">
+                  <label>
+                  <input type="radio" name="exportProductsType" id="exportProductsType-current-search" value="currentSearch">
+                  <span id="products-match-current-search"></span> sản phẩm phù hợp với kết quả tìm kiếm hiện tại
+                  </label>
+                  </div>
+                  </form>
+                  </div>
+                  <div class="modal-footer">
+                  <div class="form-actions row">
+                  <div class="col-sm-8 pull-right text-right">
+                  <button class="btn btn-default btn-back close-modal" type="button">Hủy</button>
+                  <button class="btn btn-add" type="button" bind-event-click="exportProducts()">Xuất danh sách sản phẩm</button>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                script.modal_source(define='{importProductsModal: new Bizweb.Modal(this)}', type='text/html').
+                  <div class="modal-dialog">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                  <button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+                  <h4 class="modal-title">Nhập danh sách sản phẩm</h4>
+                  </div>
+                  <div class="modal-body">
+                  <form id="form-import-products" action="/admin/products/import" method="post" enctype="multipart/form-data">
+                  <input name="importProductsFile" type="file" size="30" id="importProductsFileUpload" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" bind-event-change="enableButtonImportProducts()" />
+                  <div class="checkbox">
+                  Tải file mẫu nhập danh sách sản phẩm <a href="//bizweb.dktcdn.net/assets/files/products_import_template.xls?v=12345">tại đây</a>
+                  </div>
+                  <div class="checkbox">
+                  <label class="">
+                  <input id="overrideExistProducts" name="overrideExistProducts" type="checkbox" value="true" /><input name="overrideExistProducts" type="hidden" value="false" />
+                  Ghi đè thông tin các sản phẩm đã có
+                  </label>
+                  <p class="margin-xs-top">
+                  <b>
+                  Lưu ý:
+                  <br />- Việc ghi đè sẽ xóa hết các thông tin cũ của sản phẩm bị ghi đè để lưu thông tin mới.
+                  <br />- Tính năng này không dùng để cập nhật hàng loạt sản phẩm
+                  </b>
+                  </p>
+                  </div>
+                  </form>
+                  </div>
+                  <div class="modal-footer">
+                  <div class="form-actions row">
+                  <div class="col-sm-8 pull-right text-right">
+                  <button class="btn btn-default btn-back close-modal" type="button">Hủy</button>
+                  <button class="btn btn-add btn-import-products" type="button" bind-event-click="importProducts()" disabled>Nhập danh sách sản phẩm</button>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+              script.
+                addDOMLoadedEvent(function () {
+                $(window).scroll(function () {
+                scrollHeader();
+                });
+                function scrollHeader() {
+                var baseTop = 0;
+                var top = $(window).scrollTop();
+                var bottom_top = $('.products table tbody tr:last').offset().top - 600;
+                if (top < bottom_top) {
+                $('.list-products .show-when-scroll').css({
+                "position": "fixed",
+                "bottom": "0px",
+                "padding-top": "5px",
+                "width": "100%"
+                }).addClass('display-pagging-mobile');
+                }
+                else {
+                $('.list-products .show-when-scroll').css({
+                "position": "relative",
+                "top": "",
+                "width": "",
+                "padding-top": "25px"
+                }).removeClass('display-pagging-mobile');
+                }
+                if(top==0)
+                {
+                $('.list-products .show-when-scroll').css({
+                "position": "relative",
+                "top": "",
+                "width": "",
+                "padding-top": "25px"
+                }).removeClass('display-pagging-mobile');
+                }
+                }
+                });
+              .ui-footer-help
+                .ui-footer-help__content
+                  .ui-footer-help__icon
+                    i.fa.fa-question-circle.text-muted
+                  .ui-footer-help__text
+                    | Bạn có thể xem thêm hướng dẫn về quản lý sản phẩm 
+                    a(target='_blank', title='Hướng dẫn quản lý sản phẩm', href='https://docs.bizweb.vn/them-mot-san-pham-3.html') tại đây
+            .bizweb-copyright.text-center.text-muted
+              p Bizweb Sky - Nền tảng bán hàng online được sử dụng nhiều nhất Việt Nam
+    script(type='text/javascript').
+      var CKEDITOR_BASEPATH = '/extensions/ckeditor/';
+    script(src='/themes/portal/admin/js/firebase.js')
+    script(type='text/javascript').
+      window.CanNotify = true;
+    script(src='/themes/portal/admin/assets/libs/jquery/jquery.min.js')
+    script(src='/themes/portal/admin/assets/libs/jquery-ui/minified/jquery-ui-with-complete.min.js')
+    script(src='/themes/portal/admin/assets/bs3/js/bootstrap.min.js')
+    script(src='/themes/portal/admin/assets/plugins/jquery-navgoco/jquery.navgoco.js')
+    script(src='/themes/portal/admin/assets/plugins/jquery-validation/jquery.validate.min.js')
+    script(src='/themes/portal/admin/assets/plugins/jquery-validation/jquery.validate.unobtrusive.min.js')
+    script(src='/themes/portal/admin/assets/plugins/bootstrap-validation/js/bootstrap-validation.js')
+    script(src='/themes/portal/admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')
+    script(src='/themes/portal/admin/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js')
+    script(src='/themes/portal/admin/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js')
+    script(src='/themes/portal/admin/assets/plugins/jquery-timepicker/jquery.timepicker.js')
+    script(src='/themes/portal/admin/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js')
+    script(src='/themes/portal/admin/assets/plugins/bootstrap-tagsinput/typeahead.js')
+    script(src='/themes/portal/admin/assets/plugins/bootboxjs/bootbox.min.js')
+    script(src='/extensions/codemirror/codemirror.js')
+    script(src='/extensions/ckeditor/ckeditor.js')
+    script(src='/extensions/ckeditor/adapters/jquery.js')
+    script(src='/themes/portal/admin/assets/plugins/number-format/jshashtable-2.1.js')
+    script(src='/themes/portal/admin/assets/plugins/number-format/jquery.numberformatter-1.2.3.min.js')
+    script(src='/themes/portal/admin/assets/plugins/globalize-0.1.1/lib/globalize.js')
+    script(src='/themes/portal/admin/assets/plugins/globalize-0.1.1/lib/cultures/globalize.cultures.js')
+    script(src='/themes/portal/admin/assets/plugins/hoverintent/jquery.hoverintent.js')
+    script(src='/themes/portal/admin/assets/plugins/jquery-icheck/icheck.min.js')
+    script(src='/themes/portal/admin/assets/plugins/jquery-tagit/tag-it.js')
+    script(src='/themes/portal/admin/assets/plugins/moment/jstz.min.js')
+    script(src='/themes/portal/admin/assets/plugins/moment/moment.min.js')
+    script(src='/themes/portal/admin/assets/plugins/moment/moment-with-locales.min.js')
+    script(src='/themes/portal/admin/assets/plugins/moment/moment-timezone.js')
+    script(src='/themes/portal/admin/assets/plugins/moment/moment-range.min.js')
+    script(src='/themes/portal/admin/js/icheck.js')
+    script(src='/themes/portal/admin/assets/plugins/mustache/mustache.min.js')
+    script(src='/themes/portal/admin/js/jquery.validate.requiredif.js')
+    script(src='/themes/portal/admin/js/require-at-least-one-of-group-attribute.js')
+    script(src='/themes/portal/admin/js/md5.js')
+    script(src='/themes/portal/admin/js/money-helper.js')
+    script(src='/themes/portal/admin/js/nprogress.js')
+    script(src='/themes/portal/admin/js/initial-text-avatar.min.js')
+    script(src='/themes/portal/admin/js/admin.js')
+    script(src='/themes/portal/admin/js/main.js')
+    script(src='/assets/js/bizweb/admin.js')
+    script(src='/themes/portal/admin/js/d3.v3.5.17.js')
+    script(src='/assets/js/bizweb/report-core.js')
+    script(src='/assets/js/bizweb/reports.js')
+    script(src='/assets/js/bizweb/report-vendor.js')
+    script(src='/assets/js/bizweb/reports-view.js')
+    script(src='/themes/portal/admin/js/notification.js')
+    script(type='text/javascript').
+      CKEDITOR.timestamp = 'v242';
+    div
+      .section-footer
+        script.
+          Page();
+    // Google Tag Manager
+    noscript
+      iframe(src='//www.googletagmanager.com/ns.html?id=GTM-WM8XKV', height='0', width='0', style='display:none;visibility:hidden')
+    script.
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WM8XKV');
+    // End Google Tag Manager

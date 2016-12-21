@@ -1,0 +1,525 @@
+block header
+block content
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='apple-touch-icon-precomposed', href='ico/apple-touch-icon-57-precomposed.html')
+    link(rel='shortcut icon', href='assets/ico/favicon.png')
+    title shopNAMMAI - Bootstrap E-Commerce Parallax Theme
+    link(href='assets/bootstrap/css/bootstrap.css', rel='stylesheet')
+    link#pagestyle(rel='stylesheet', type='text/css', href='assets/css/skin-1.css')
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(rel='stylesheet', href='dist/css/mystyle.css')
+  body
+    // FORM ĐĂNG NHẬP
+    #ModalLogin.modal.signUpContent.fade(tabindex='-1', role='dialog')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true')  × 
+            h3.modal-title-site.text-center  Đăng nhập shopNAMMAI
+          .modal-body
+            .form-group.login-username
+              div
+                input#login-user.form-control.input(name='log', size='20', placeholder='Enter Username', type='text')
+            .form-group.login-password
+              div
+                input#login-password.form-control.input(name='Password', size='20', placeholder='Password', type='password')
+            .form-group
+              div
+                .checkbox.login-remember
+                  label
+                    input(name='rememberme', value='forever', checked='checked', type='checkbox')
+                    |                            Nhớ mật khẩu
+            div
+              div
+                input.btn.btn-block.btn-lg.btn-primary(name='submit', value='Đăng nhập', type='submit')
+          .modal-footer
+            p.text-center
+              | Chưa có tài khoản? 
+              a(data-toggle='modal', data-dismiss='modal', href='#ModalSignup')  Đăng ký. 
+              br
+              a(href='forgot-password.html')  Quên mật khẩu? 
+    // END FORM ĐĂNG NHẬP
+    // FORM ĐĂNG KÝ
+    #ModalSignup.modal.signUpContent.fade(tabindex='-1', role='dialog')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true')  × 
+            h3.modal-title-site.text-center  Đăng Ký 
+          .modal-body
+            .control-group
+              a.fb_button.btn.btn-block.btn-lg(href='#')
+                | Đăng nhập với
+                | FACEBOOK
+            h5.text-center(style='padding:10px 0 10px 0;')  HOẶC 
+            .form-group.reg-username
+              div
+                input.form-control.input(name='login', size='20', placeholder='Enter Username', type='text')
+            .form-group.reg-email
+              div
+                input.form-control.input(name='reg', size='20', placeholder='Enter Email', type='text')
+            .form-group.reg-password
+              div
+                input.form-control.input(name='password', size='20', placeholder='Password', type='password')
+            .form-group
+              div
+                .checkbox.login-remember
+                  label
+                    input#rememberme(name='rememberme', value='forever', checked='checked', type='checkbox')
+                    |                            Nhớ mật khẩu
+            div
+              div
+                input.btn.btn-block.btn-lg.btn-primary(name='submit', value='Đăng ký', type='submit')
+          .modal-footer
+            p.text-center
+              | Bạn đã có tài khoản? 
+              a(data-toggle='modal', data-dismiss='modal', href='#ModalLogin')
+                | Đăng nhập
+    // END FORM ĐĂNG KÝ
+    // HEADER
+    .navbar.navbar-tshop.navbar-fixed-top.megamenu(role='navigation')
+      // HEADER-TOP
+      .navbar-top
+        .container
+          .row
+            .col-lg-6.col-sm-6.col-xs-6.col-md-6
+              .pull-left
+                ul.userMenu
+                  li
+                    a(href='#')
+                      span.hidden-xs Help
+                      i.glyphicon.glyphicon-info-sign.hide.visible-xs
+                  li.phone-number
+                    a(href='#')
+                      span
+                        i.glyphicon.glyphicon-phone-alt
+                      span.hidden-xs(style='margin-left:5px')  0967-399-470
+            .col-lg-6.col-sm-6.col-xs-6.col-md-6.no-margin.no-padding
+              .pull-right
+                ul.userMenu
+                  li
+                    a(href='account.html')
+                      span.hidden-xs
+                        i.glyphicon.glyphicon-user
+                        |  Tài khoản của tôi
+                      i.glyphicon.glyphicon-user.hide.visible-xs
+                  li
+                    a(href='#', data-toggle='modal', data-target='#ModalLogin')
+                      span.hidden-xs
+                        i.glyphicon.glyphicon-log-in
+                        |  Đăng Nhập
+                      i.glyphicon.glyphicon-log-in.hide.visible-xs
+                  li
+                    a(href='#', data-toggle='modal', data-target='#ModalSignup')
+                      span.hidden-xs
+                        i.glyphicon.glyphicon-lock
+                        |  Tạo tài khoản
+                      i.glyphicon.glyphicon-lock.hide.visible-xs
+      // END HEADER-TOP
+      // HEADER-MIDDLE
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only  Toggle navigation 
+            span.icon-bar  
+            span.icon-bar  
+            span.icon-bar  
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-cart')
+            i.fa.fa-shopping-cart.colorWhite  
+            
+          a.navbar-brand(href='index.html')
+            img(src='images/shopping-bag-flat.png', alt='shopNAMMAI',style='height: 110%')
+          .search-box.pull-right.hidden-lg.hidden-md.hidden-sm
+            .input-group
+              button.btn.btn-nobg.getFullSearch(type='button')
+                i.fa.fa-search  
+        
+            .miniCartFooter.miniCartFooterInMobile.text-right
+              h3.text-right.subtotal  Subtotal: $210 
+              a.btn.btn-sm.btn-danger(href='cart.html')
+                i.fa.fa-shopping-cart  
+                |  XEM GIỎ HÀNG
+              a.btn.btn-sm.btn-primary(href='checkout-1.html')  THANH TOÁN 
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='index.html')
+                i.glyphicon.glyphicon-home
+                |  Trang chủ
+            li.dropdown.megamenu-fullwidth
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                i.glyphicon.glyphicon-folder-close
+                |  Loại sản phẩm 
+                b.caret  
+              ul.dropdown-menu
+                li.megamenu-content
+                  ul.col-lg-3.col-sm-3.col-md-3.unstyled.noMarginLeft.newCollectionUl
+                    li.no-border
+                      p.promo-1
+                        strong  SẢN PHẨM MỚI 
+                    li
+                      a(href='shop')  TẤT CẢ SẢN PHẨM 
+                    li
+                      a(href='shop')  LAP TOP 
+                    li
+                      a(href='shop')  ĐIỆN THOẠI
+                    li
+                      a(href='shop')  MÁY TÍNH BẢNG 
+                    li
+                      a(href='shop')  PHỤ KIỆN 
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-4
+                    li
+                      a.newProductMenuBlock(href='product-details.html')
+                        img.img-responsive(src='images/site/promo1.jpg', alt='product')
+                        span.ProductMenuCaption
+                          i.fa.fa-caret-right  
+                          |  LAP TOP
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-4
+                    li
+                      a.newProductMenuBlock(href='product-details.html')
+                        img.img-responsive(src='images/site/promo2.jpg', alt='product')
+                        span.ProductMenuCaption
+                          i.fa.fa-caret-right  
+                          |  ĐIỆN THOẠI
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-4
+                    li
+                      a.newProductMenuBlock(href='product-details.html')
+                        img.img-responsive(src='images/site/promo3.jpg', alt='product')
+                        span.ProductMenuCaption
+                          i.fa.fa-caret-right  
+                          |  MÁY TÍNH BẢNG
+            li.dropdown.megamenu-80width
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                i.glyphicon.glyphicon-shopping-cart
+                |  SHOP
+                b.caret  
+              ul.dropdown-menu
+                li.megamenu-content
+                  ul.col-lg-2.col-sm-2.col-md-2.unstyled.noMarginLeft
+                    li
+                      a(href='#')
+                        strong  LAPTOP 
+                    li
+                      a(href='#')  Apple
+                    li
+                      a(href='#')  Lenovo
+                    li
+                      a(href='#')  ASUS
+                    li
+                      a(href='#')  SONY 
+                    li
+                      a(href='#')  Toshiba 
+                    li
+                      a(href='#')  HP 
+                    li
+                      a(href='#')  Dell 
+                    li
+                      a(href='#')  Acer
+                  ul.col-lg-2.col-sm-2.col-md-2.unstyled
+                    li
+                      a(href='#')
+                        strong  ĐIỆN THOẠI 
+                    li
+                      a(href='#')  HTC 
+                    li
+                      a(href='#')  SAMSUM 
+                    li
+                      a(href='#')  SONY 
+                    li
+                      a(href='#')  APPLE 
+                    li
+                      a(href='#')  NOKIA 
+                    li
+                      a(href='#')  OPPO 
+                    li
+                      a(href='#')  LG 
+                    li
+                      a(href='#')  LENOVO
+                  ul.col-lg-2.col-sm-2.col-md-2.unstyled
+                    li
+                      a(href='#')
+                         p
+                        strong  MÁY TÍNH BẢNG 
+                    li
+                      a(href='#')  SAMSUM 
+                    li
+                      a(href='#')  ASUS 
+                    li
+                      a(href='#')  LENOVO 
+                    li
+                      a(href='#')  OPPO 
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-6
+                    li.no-margin.productPopItem
+                      a(href='product-details.html')
+                        img.img-responsive(src='images/site/g4.jpg', alt='img')
+                      a.text-center.productInfo.alpha90(href='product-details.html')
+                        
+                  ul.col-lg-3.col-sm-3.col-md-3.col-xs-6
+                    li.no-margin.productPopItem.relative
+                      a(href='product-details.html')
+                        img.img-responsive(src='images/site/g5.jpg', alt='img')
+                      a.text-center.productInfo.alpha90(href='product-details.html')
+                        | SAMSUM Galaxy S7 
+                        br
+                        span  18.990.000đ
+            li
+              a(href='lienhe')
+                i.glyphicon.glyphicon-earphone
+                |  Liên Hệ
+            li
+              a(href='about-us.html')
+                i.glyphicon.glyphicon-question-sign
+                |  Thông Tin Shop
+          .nav.navbar-nav.navbar-right.hidden-xs
+            .dropdown.cartMenu
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                i.fa.fa-shopping-cart  
+                span.cartRespons  GIỎ HÀNG (0đ) 
+                b.caret  
+              .dropdown-menu.col-lg-4.col-xs-12.col-md-4
+                .w100.miniCartTable.scroll-pane
+                  table
+                    tbody
+                      tr.miniCartProduct
+                        td.miniCartProductThumb(style='width:20%')
+                          div
+                            
+                .miniCartFooter.text-right
+                  h3.text-right.subtotal  Tổng tiền: 0đ
+                  a.btn.btn-sm.btn-danger(href='cart.html')
+                    i.fa.fa-shopping-cart  
+                    |  XEM
+                    |                            GIỎ HÀNG
+                  a.btn.btn-sm.btn-primary(href='checkout-1.html')  THANH TOÁN 
+            .search-box
+              .input-group
+                button.btn.btn-nobg.getFullSearch(type='button')
+                  i.fa.fa-search  
+      // END HEADER-MIDDLE
+      // SEARCH
+      .search-full.text-right
+        a.pull-right.search-close
+          i.fa.fa-times-circle  
+        .searchInputBox.pull-right
+          input.search-input(type='search', data-searchurl='search?=', name='q', placeholder='start typing and hit enter to search')
+          button.btn-nobg.search-btn(type='submit')
+            i.fa.fa-search  
+      // END SEARCH
+    // END HEADER
+    // CONTENT
+    .container.main-container.headerOffset
+      .row
+        .breadcrumbDiv.col-lg-12
+          ul.breadcrumb
+            li
+              a(href='index.html') Trangchu
+            li
+              a(href='category.html') sanpham
+            li.active thanhtoan
+      .row
+        .col-lg-9.col-md-9.col-sm-7.col-xs-6.col-xxs-12.text-center-xs
+          h1.section-title-inner
+            span
+              i.glyphicon.glyphicon-shopping-cart
+              |  Shopping cart
+        .col-lg-3.col-md-3.col-sm-5.rightSidebar.col-xs-6.col-xxs-12.text-center-xs
+          h4.caps
+            a(href='http://localhost:3000/shop/')
+              i.fa.fa-chevron-left
+              |  Quay Lại shopNAMMAI
+      // DANH SÁCH ĐƠN HÀNG
+      .row
+        .col-lg-9.col-md-9.col-sm-7
+          .row.userInfo
+            .col-xs-12.col-sm-12
+              .cartContent.w100
+                table.cartTable.table-responsive(style='width:100%')
+                  tbody
+                    tr.CartProduct.cartTableHeader
+                      td(style='width:15%')  Sản Phẩm
+                      td(style='width:40%') Chi Tiết
+                      td.delete(style='width:10%')  
+                      td(style='width:10%') Số Lượng
+                      td(style='width:10%') Chiết Khấu
+                      td(style='width:15%') Tổng Tiền
+                    tr.CartProduct
+                      td.CartProductThumb
+                        div
+                          a(href='product-details.html')
+                            img(src='images/product/a1.jpg', alt='img')
+                      td
+                        .CartDescription
+                          h4
+                            a(href='product-details.html') LAPTOP ACER ASPIRE Z1402 39KT I3 5005U/4GB/500GB/WIN10/KHÔNGDVD 
+                          p Thông số kỹ thuật CPU:	Intel, Core i3 Broadwell, 5005U, 2.00 GHz 
+                          p RAM:	DDR3L (1 khe RAM), 4 GB, 1600 MHz Đĩa cứng:	HDD, 500 GB 
+                          p Màn hình rộng:	14 inch, HD (1366 x 768 pixels) Cảm ứng:	
+                          p Không Đồ họa:	Intel® HD Graphics 5500, Share (Dùng chung bộ nhớ với RAM) Đĩa quang:	
+                          p Không Webcam:	3.0 MP Chất liệu vỏ: Vỏ nhựa Cổng giao tiếp:	HDMI, LAN (RJ45), USB 2.0, USB 3.0
+                          .price
+                            span 8.4900.000đ
+                      td.delete
+                         td: a(href='localhost:3000/sanpham/thanhtoan/delete?item=xóa',)
+                          i.glyphicon.glyphicon-trash.fa-2x
+                      td
+                        input.quanitySniper(type='text', value='2', name='quanitySniper')
+                      td 0
+                   
+                    
+                      
+              .cartFooter.w100
+                .box-footer
+                  .pull-right
+                    a.btn.btn-default(href='http://localhost:3000/')
+                      i.fa.fa-arrow-right
+                      |    Tiếp tục mua hàng
+        .col-lg-3.col-md-3.col-sm-5.rightSidebar
+          .contentBox
+            .w100.costDetails
+              #order-detail-content.table-block
+                a.btn.btn-primary.btn-lg.btn-block(title='checkout', href='checkout', style='margin-bottom:20px')
+                  | Thanh Toán   
+                  i.fa.fa-arrow-right
+                .w100.cartMiniTable
+                  table#cart-summary.std.table
+                    tbody
+                      tr
+                        td Tổng số sản phẩm
+                        td.price $216.51
+                      tr(style='')
+                        td Shipping
+                        td.price
+                          span.success Free shipping!
+                      tr.cart-total-price
+                        td Tổng (chưa bao gồm thuế.)
+                        td.price $216.51
+                      tr
+                        td Tổng thuế
+                        td#total-tax.price $0.00
+                      tr
+                        td  Tổng
+                        td#total-price.site-color $216.51
+                      tr
+                        td(colspan='2')
+                          .input-append.couponForm
+                            input#appendedInputButton.col-lg-8(type='text', placeholder='Mã Khuyến Mãi')
+                            button.col-lg-4.btn.btn-success(type='button') Apply!
+                    tbody
+      div(style='clear:both')
+    .gap
+    // END CONTENT
+    // FOOTER
+    footer
+      .footer
+        .container
+          .row
+            .col-lg-3.col-md-3.col-sm-4.col-xs-6
+              h3  hỗ trợ 
+              ul
+                li.supportLi
+                  p  Mọi thắc mắc xin vui lòng liên hệ với chúng tôi
+                  h4
+                    a.inline(href='0967-399-470')
+                      strong
+                        i.fa.fa-phone  
+                        |  0967-399-470
+                  h4
+                    a.inline(href='http://templatecycle.com/cdn-cgi/l/email-protection#cca4a9a0bc8cb5a3b9bebba9aee2afa3a1')
+                      i.fa.fa-envelope-o  
+                      span.__cf_email__(data-cfemail='d9b1bcb5a999a0b6acabaebcbbf7bab6b4') huunam.mai95@gmail.com
+                      script(data-cfhash='f9e31', type='text/javascript').
+    
+            .col-lg-2.col-md-2.col-sm-4.col-xs-6
+              h3  Shop 
+              ul
+                li
+                  a(href='#')
+                    | LAPTOP
+                li
+                  a(href='#')
+                    | ĐIỆN THOẠI
+                li
+                  a(href='#')
+                    | MÁY TÍNH BẢNG
+                li
+                  a(href='#')
+                    | PHỤ KIỆN
+               
+            .hide.visible-xs(style='clear:both')
+            .col-lg-2.col-md-2.col-sm-4.col-xs-6
+              h3  THÔNG TIN
+              ul.list-unstyled.footer-nav
+                li
+                  a(href='#')
+                    | Câu hỏi ?
+                li
+                  a(href='#')
+                    | Chính sách
+                li
+                  a(href='#')
+                    | Liên hệ
+                li
+                  a(href='#')  Thông tin về shopNAMMAI 
+              
+            .col-lg-2.col-md-2.col-sm-4.col-xs-6
+              h3  TÀI KHOẢN CỦA TÔI
+              ul
+                li
+                  a(href='account.html')  Tài khoản của tôi 
+                li
+                  a(href='my-address.html')  Địa chỉ của tôi
+                li
+                  a(href='wishlist.html')  Danh sách đơn đặt hàng
+                
+            .hide.visible-xs(style='clear:both')
+            .col-lg-3.col-md-3.col-sm-6.col-xs-12
+              h3  Stay in touch 
+              ul
+                li
+                  .input-append.newsLatterBox.text-center
+                    input.full.text-center(type='text', placeholder='Email ')
+                    button.btn.bg-gray(type='button')
+                      | Subscribe 
+                      i.fa.fa-long-arrow-right  
+              ul.social
+                li
+                  a(href='http://facebook.com/')
+                    i.fa.fa-facebook    
+                li
+                  a(href='http://twitter.com/')
+                    i.fa.fa-twitter    
+                li
+                  a(href='https://plus.google.com/')
+                    i.fa.fa-google-plus    
+                li
+                  a(href='http://youtube.com/')
+                    i.fa.fa-pinterest    
+                li
+                  a(href='http://youtube.com/')
+                    i.fa.fa-youtube    
+                     footer.main-footer
+        .pull-right.hidden-xs
+          b Version
+          |  1.0.0
+        strong
+          | Copyright @ 2016-2017 
+          a(href='http://shopNAMMAI.com') 
+          | .
+        |  Bảng quyền thuộc 
+        |     về shopNAMMAI
+    // END FOOTER
+    script(src='assets/js/jquery/jquery.min.js')
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(type='text/javascript', src='assets/js/jquery.parallax-1.1.js')
+    script(type='text/javascript', src='assets/js/helper-plugins/jquery.mousewheel.min.js')
+    script(type='text/javascript', src='assets/js/jquery.mCustomScrollbar.js')
+    script(type='text/javascript', src='assets/plugins/icheck-1.x/icheck.min.js')
+    script(src='assets/js/grids.js')
+    script(src='assets/js/owl.carousel.min.js')
+    script(src='assets/js/select2.min.js')
+    script(src='assets/js/bootstrap.touchspin.js')
+    script(src='assets/js/script.js')
